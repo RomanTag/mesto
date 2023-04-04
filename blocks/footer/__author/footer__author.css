@@ -1,0 +1,20 @@
+.footer__author {
+  margin: auto 0 auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__author {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+/* поставил margin auto сверху и снизу,
+чтобы подпись была по цетру своего контейнера и выровнялась с навигацией */
