@@ -1,6 +1,8 @@
 .profile {
-  margin: 0;
-  padding: 42px 19px 0 19px;
+  box-sizing: border-box;
+  padding: 42px 0 0 0;
+  width: calc(100% - (19px * 2));
+  margin: auto;
   font-family: 'Inter';
   display: flex;
   flex-direction: column;

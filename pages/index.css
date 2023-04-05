@@ -19,9 +19,6 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__lang-links/header__lang-links.css);
-@import url(../blocks/header/__lang-link/header__lang-link.css);
-@import url(../blocks/header/__lang-link/_active/header__lang-link_active.css);
 
 /* content */
 
@@ -29,8 +26,13 @@
 
 /* section profile */
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/profile__avatar/profile__avatar.css);
-@import url(../blocks/profile/profile__avatar-image/profile__avatar-image.css);
+@import url(../blocks/profile/__avatar/profile__avatar.css);
+@import url(../blocks/profile/__avatar-image/profile__avatar-image.css);
+@import url(../blocks/profile/__info/profile__info.css);
+@import url(../blocks/profile/__name/profile__name.css);
+@import url(../blocks/profile/__data/profile__data.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 
 
 /* section intro */
@@ -49,7 +51,4 @@
 
 /* footer */
 
-@import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/__links/footer__links.css);
-@import url(../blocks/footer/__link/footer__link.css);
-@import url(../blocks/footer/__author/footer__author.css);
+

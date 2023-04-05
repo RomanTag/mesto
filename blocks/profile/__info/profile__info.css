@@ -1,0 +1,15 @@
+.profile__info {
+  margin: 0;
+  padding: 26px 0 36px 0;
+  /* display: grid; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 282px;
+  /* grid-template-columns: 3fr auto; */
+  /* flex-direction: column; */
+  justify-content: center;
+  justify-items: center;
+  /* column-gap: 10px;
+  row-gap: 14px; */
+  box-sizing: border-box;
+}

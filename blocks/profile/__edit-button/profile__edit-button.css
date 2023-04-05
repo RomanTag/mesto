@@ -1,0 +1,19 @@
+.profile__edit-button {
+  margin-left: 10px;
+  display: flex;
+  align-self: center;
+  width: 18px;
+  height: 18px;
+  background-color: #000000; /* черный фон */
+  background-image: url(../../../images/pen.svg); /* фоновый рисунок */
+  background-size: 7.5px 7.5px; /* чтобы изображение занимало необходимую величену */
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #FFFFFF; /* делаем границу кнопки */
+  transition: opacity .2s linear;
+}
+
+.profile__edit-button:hover {
+  opacity: .6;
+  cursor: pointer;
+}
