@@ -1,32 +1,33 @@
 .footer {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
-  padding: 64px 0 24px 16px;
+  padding: 46px 19px 36px 19px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: start;
   justify-content: space-between;
   gap: 48px;
+  color: #545454;
 }
 
 @media screen and (min-width: 768px) {
   .footer {
-    gap: 0;
+    /* gap: 0;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 88px 24px 24px 24px;
+    padding: 88px 24px 24px 24px; */
   }
 }
 
 @media screen and (min-width: 1024px) {
   .footer {
-    padding: 92px 48px 24px 48px;
+    /* padding: 92px 48px 24px 48px; */
   }
 }
 
 @media screen and (min-width: 1280px) {
   .footer {
-    margin: 0;
+    /* margin: 0; */
   }
 }

@@ -47,17 +47,8 @@
 @import url(../blocks/element/__place-button/element__place-button.css);
 
 
-
-/* section photo-grid */
-
-
-
-/* section places */
-
-/* section cover */
-
-
-
 /* footer */
 
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__author/footer__author.css);
 
