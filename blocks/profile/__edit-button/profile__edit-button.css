@@ -17,3 +17,23 @@
   opacity: .6;
   cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+  .profile__edit-button {}
+}
+
+@media screen and (min-width: 1024px) {
+  .profile__edit-button {
+    margin-left: 22px;
+    width: 24px;
+    height: 24px;
+    background-size: 10px 10px
+  }
+
+  /* @media screen and (min-width: 1280px) {
+    .profile__edit-button {
+      margin-left: 22px;
+      width: 24px;
+      height: 24px;
+      background-size: 10px 10px
+    } */

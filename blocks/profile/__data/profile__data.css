@@ -2,8 +2,12 @@
   margin: 0;
   font-style: normal;
   font-weight: 400;
-  font-size: calc((100vw - 320px) / (1280 - 320) * (18 - 14) + 14px);
-  line-height: calc((100vw - 320px) / (1280 - 320) * (22 - 17) + 17px);
+  /* font-size: calc((100vw - 320px) / (1280 - 320) * (18 - 14) + 14px);
+  line-height: calc((100vw - 320px) / (1280 - 320) * (22 - 17) + 17px); */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
   text-align: center;
   text-overflow: ellipsis;
   grid-column: -3 / -1;
@@ -12,3 +16,23 @@
   max-width: 282px;
   box-sizing: border-box;
 }
+
+@media screen and (min-width: 768px) {
+  .profile__data {
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile__data {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  /* @media screen and (min-width: 1280px) {
+    .profile__data {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 22px;
+    } */

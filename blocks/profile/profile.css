@@ -9,3 +9,27 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (min-width: 768px) {
+  .profile {
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile {
+    margin: 0;
+    flex-direction: row;
+    width: 880px;
+    justify-content: unset;
+    align-items: start;
+}
+
+/* @media screen and (min-width: 1280px) {
+  .profile {
+    margin: 0;
+    flex-direction: row;
+    width: 880px;
+    justify-content: unset;
+    align-items: start;
+} */

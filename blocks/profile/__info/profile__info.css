@@ -7,9 +7,36 @@
   width: 282px;
   /* grid-template-columns: 3fr auto; */
   /* flex-direction: column; */
-  justify-content: center;
   justify-items: center;
+  justify-content: center;
   /* column-gap: 10px;
   row-gap: 14px; */
   box-sizing: border-box;
+  /* border: 1px solid white; */
 }
+
+@media screen and (min-width: 768px) {
+  .profile__info {
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile__info {
+    padding: 0;
+    margin: 18px 0 0 31px;
+    row-gap: 7px;
+    justify-items: center;
+    justify-content: unset;
+    width: 340px;
+}
+
+/* @media screen and (min-width: 1280px) {
+  .profile__info {
+    padding: 0;
+    margin: 18px 0 0 31px;
+    row-gap: 7px;
+    justify-items: center;
+    justify-content: unset;
+    width: 340px;
+} */

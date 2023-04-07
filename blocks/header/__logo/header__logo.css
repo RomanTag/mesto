@@ -1,12 +1,15 @@
 .header__logo {
+  padding: 0;
   width: 103.74px;
-  height: 24.4px;
-  margin: 28px 0 31px 27px;
+  height: auto;
+  transition: all 0.3s ease-in-out; /* добавить плавный переход */
+  margin: 0 0 31px 27px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .header__logo {
-    width: ;
-    height: ;
+    margin: 0 0 41px 0;
+    width: 142px;
   }
 }
+
