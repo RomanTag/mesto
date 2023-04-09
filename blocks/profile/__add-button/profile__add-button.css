@@ -1,20 +1,16 @@
 .profile__add-button {
+  all: unset;
   padding: 0;
   margin: 0;
   display: flex;
   align-self: center;
-  width: 282px;
-  height: 50px;
-  background-color: #000000;
-  /* черный фон */
+  width: 279px;
+  height: 47px;
   background-image: url(../../../images/profile__plus.svg);
-  /* фоновый рисунок */
   background-size: 16px 16px;
-  /* чтобы изображение занимало необходимую величену */
   background-position: center;
   background-repeat: no-repeat;
   border: 2px solid #FFFFFF;
-  /* делаем границу кнопки */
   transition: opacity .2s linear;
 }
 

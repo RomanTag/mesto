@@ -114,7 +114,6 @@
               <button class="element__place-button"></button>
             </div>
           </li>
-
       </section>
     </main>
 
@@ -124,6 +123,23 @@
       <p class="footer__author">&copy;2023. Mesto Russia</p>
     </footer>
   </div>
+
+  <!-- popup -->
+
+  <div class="popup">
+    <div class="popup__overlay"></div>
+    <div class="popup__content"><button class="popup__close-btn" type="button"></button>
+    <h2 class="popup__title">Редактировать профиль</h2>
+    <fieldset class="popup__input-container popup__input-container_ctrl_texts">
+      <label for="name" class="popup__label"></label>
+      <input type="text" class="popup__text" id="name" name="name" placeholder="Жак-Ив Кусто">
+      <label for="description" class="popup__label"></label>
+      <input type="text" class="popup__text" id="description" name="description" placeholder="Исследователь океана">
+    </fieldset>
+      <button type="submit" class="popup__save-btn popup__save-btn_disabled">Сохранить</button>
+    </div>
+  </div>
+  <script src="./pages/index.js"></script>
 </body>
 
 </html>

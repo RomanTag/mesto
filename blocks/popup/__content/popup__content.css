@@ -1,0 +1,31 @@
+.popup__content {
+  margin: 0 auto;
+  position: relative;
+  padding: 25px 22px;
+  background-color: #fff;
+  border-radius: 15px;
+  width: 238px;
+  height: 272px;
+  /* transition: all 0.2s ease-in-out; */
+}
+
+@media screen and (min-width: 768px) {
+  .popup__content {
+    width: 300px;
+    height: 334px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .popup__content {
+    width: 358px;
+    height: 260px;
+    padding: 34px 36px 37px 36px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .popup__content {
+
+  }
+}

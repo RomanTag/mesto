@@ -1,7 +1,7 @@
 .footer {
   margin: 0;
   font-family: 'Inter', Arial, sans-serif;
-  padding: 46px 19px 36px 19px;
+  padding: 50px 19px 36px 19px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -13,7 +13,7 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 46px 19px 36px 52px;
+    padding: 50px 19px 36px 52px;
   }
 }
 

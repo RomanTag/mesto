@@ -1,0 +1,29 @@
+.popup {
+  display: none;
+  position: fixed;
+  font-family: 'Inter', Arial, sans-serif;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 123px 19px 123px;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 768px) {
+  .popup {
+
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .popup {
+    padding: 195px 296px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .popup {
+    padding: 195px 425px;
+  }
+}

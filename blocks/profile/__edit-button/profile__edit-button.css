@@ -1,10 +1,10 @@
 .profile__edit-button {
+  all: unset;
   margin-left: 10px;
   display: flex;
   align-self: center;
   width: 18px;
   height: 18px;
-  background-color: #000000; /* черный фон */
   background-image: url(../../../images/pen.svg); /* фоновый рисунок */
   background-size: 7.5px 7.5px; /* чтобы изображение занимало необходимую величену */
   background-position: center;

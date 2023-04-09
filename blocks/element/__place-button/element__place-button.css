@@ -1,24 +1,30 @@
 .element__place-button {
+  all: unset;
   padding: 0;
   margin: 0;
   background-image: url(../../../images/elements/heart.svg);
-  background-color: #fff;
+  background-size: 22px 19px;
   background-position: center;
   background-repeat: no-repeat;
-  width: 26px;
+  width: 33px;
   height: auto;
   border: none;
   transition: opacity .2s linear;
-  /* transition: transform .4s ease-in; */
+  transition: transform .2s ease-in;
 }
 
 .element__place-button:hover {
-    /* transform: scale(1.2); */
     opacity: .5;
     cursor: pointer;
 }
 
-.element__place-button.clicked {
-  background-color: #000;
+.element__place-button:active {
+  background-image: url(../../../images/elements/heart_b.svg);
+  transform: scale(.8);
+  opacity: 1;
 }
+
+/* .element__place-button.clicked {
+  background-color: #000;
+} */
 
