@@ -1,39 +1,34 @@
 const openPopupBtn = document.querySelector('.profile__edit-button');
 const popup = document.querySelector('.popup');
-const popupCloseBtn = document.querySelector('.popup__close-btn');
-const popupText = document.querySelector('.popup__text');
-const descriptionInput = document.querySelector('#description');
-const jobInput = document.querySelector('.popup__save-btn');
+const popupCloseBtn = popup.querySelector('.popup__close-btn');
+const jobInput = document.querySelector('#description');
 const nameInput = document.querySelector('#name');
+const formElement = document.querySelector('.popup__input-container');
+const saveButton = document.querySelector('.popup__save-btn');
 // const saveButtonDisabled = document.querySelector('.popup__save-btn_disabled');
 
-// открыть и закрыть попап
+// открытие/закрытие попапа
 
 function togglePopup() {
   popup.classList.toggle('popup__opened');
 }
 
-openPopupBtn.addEventListener('click', togglePopup);
-popupCloseBtn.addEventListener('click', togglePopup);
-
-
-if (popupText.textContent.length === 0) {
-  saveButtonDisabled.setAttribute('disabled', true);
-  saveButtonDisabled.classList.add('.popup__save-btn_disabled');
-}
-
 function handleFormSubmit (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-                                                // Так мы можем определить свою логику отправки.
-                                                // О том, как это делать, расскажем позже.
+    evt.preventDefault();
 
-    // Получите значение полей jobInput и nameInput из свойства value
+    const jobInputValue = jobInput.value;
+    const nameInputValue = nameInput.value;
 
-    // Выберите элементы, куда должны быть вставлены значения полей
-
-    // Вставьте новые значения с помощью textContent
+    togglePopup();
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
+function handlePopupClose() {
+  jobInput.value = '';
+  nameInput.value = '';
+  togglePopup();
+}
+openPopupBtn.addEventListener('click', togglePopup);
+popupCloseBtn.addEventListener('click', handlePopupClose);
+saveButton.addEventListener('click', handleFormSubmit)
 formElement.addEventListener('submit', handleFormSubmit);
+
