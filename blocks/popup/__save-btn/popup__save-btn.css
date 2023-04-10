@@ -1,6 +1,6 @@
 .popup__save-btn {
   all: unset;
-  margin: 45px auto 0;
+  margin: 44px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +33,7 @@
 
 @media screen and (min-width: 1024px) {
   .popup__save-btn {
+    margin-top: 48px;
     width: 358px;
     height: 50px;
     font-weight: 400;
