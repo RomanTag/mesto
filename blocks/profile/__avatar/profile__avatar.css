@@ -2,22 +2,11 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  width: 43%; /* ширина картинки в процентах от родительского контейнера */
+  width: 43%;
   height: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .profile__avatar {
-
-  }
 }
 
 @media screen and (min-width: 1024px) {
   .profile__avatar {
     max-width: 120px;
-}
-
-/* @media screen and (min-width: 1280px) {
-  .profile__avatar {
-   max-width: 120px;
-} */
+  }

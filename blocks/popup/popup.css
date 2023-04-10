@@ -10,12 +10,6 @@
   z-index: 9999;
 }
 
-@media screen and (min-width: 768px) {
-  .popup {
-
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .popup {
     padding: 195px 296px;

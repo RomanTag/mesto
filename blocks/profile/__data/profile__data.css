@@ -17,22 +17,9 @@
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 768px) {
-  .profile__data {
-
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .profile__data {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
   }
-
-  /* @media screen and (min-width: 1280px) {
-    .profile__data {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 22px;
-    } */

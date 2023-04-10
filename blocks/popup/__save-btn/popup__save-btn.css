@@ -40,9 +40,3 @@
     line-height: 22px;
   }
 }
-
-@media screen and (min-width: 1280px) {
-  .popup__save-btn {
-
-  }
-}

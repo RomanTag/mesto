@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./pages/index.css">
-  <title>Путешествия по России</title>
-  <meta name="description" content="Лендинг про путешествия по России">
-  <meta name="keywords" content="Путешествие, Россия, природа">
+  <title>Путешествия по миру</title>
+  <meta name="description" content="Сайт о путешествиях и путешественниках">
+  <meta name="keywords" content="Путешествия, Путешественники, Мир">
   <meta name="author" content="Roman Valeev">
 </head>
 
@@ -34,14 +34,14 @@
 
       <section class="profile">
         <div class="profile__avatar">
-          <img src="./images/image.png" alt="аватар" class="profile__avatar-image"></img>
+          <img src="./images/profile/image.png" alt="аватар" class="profile__avatar-image"></img>
         </div>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
+          <button class="profile__edit-btn" type="button"></button>
           <p class="profile__data">Исследователь океана</p>
         </div>
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-btn" type="button"></button>
       </section>
 
       <!-- section elements  -->
@@ -49,69 +49,69 @@
       <section class="elements">
         <ul class="element">
 
-          <!-- Карачаевск -->
+          <!-- Риф Белиза -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/1 Belize Barrier Reef.jpg"
+              alt="Риф Белиза">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаeeeeeeeeeeeeeeeевск</h2>
-              <button class="element__place-button"></button>
+              <h2 class="element__place-title">Риф Белиза</h2>
+              <button class="element__place-btn"></button>
             </div>
           </li>
 
-          <!-- Карачаевск -->
+          <!-- Галапагосские острова -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/2 Galapagos Islandss.jpg"
+              alt="Галапагосские острова">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаевск</h2>
-              <button class="element__place-button" type="button"></button>
+              <h2 class="element__place-title">Галапагосские острова</h2>
+              <button class="element__place-btn" type="button"></button>
             </div>
           </li>
 
-          <!-- Карачаевск -->
+          <!-- Марианская впадина -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/3 Mariana Trench.jpg"
+              alt="Марианская впадина">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаевск</h2>
-              <button class="element__place-button"></button>
+              <h2 class="element__place-title">Марианская впадина</h2>
+              <button class="element__place-btn"></button>
             </div>
           </li>
 
-          <!-- Карачаевск -->
+          <!-- Средиземное море -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/4 Mediterranean Sea.jpg"
+              alt="Средиземное море">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаевск</h2>
-              <button class="element__place-button"></button>
+              <h2 class="element__place-title">Средиземное море</h2>
+              <button class="element__place-btn"></button>
             </div>
           </li>
 
-          <!-- Карачаевск -->
+          <!-- Японское море -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/5 Sea of Japan.jpeg"
+              alt="Японское море">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаевск</h2>
-              <button class="element__place-button"></button>
+              <h2 class="element__place-title">Японское море</h2>
+              <button class="element__place-btn"></button>
             </div>
           </li>
 
-          <!-- Карачаевск -->
+          <!-- Антарктида -->
 
           <li class="element__list">
-            <img class="element__place-image" src="./images/elements/kirill-pershin-1088404-unsplash.png"
-              alt="Карачаевск">
+            <img class="element__place-image" src="./images/elements/6 Antarctica.jpg"
+              alt="Антарктида">
             <div class="element__place">
-              <h2 class="element__place-title">Карачаевск</h2>
-              <button class="element__place-button"></button>
+              <h2 class="element__place-title">Антарктида</h2>
+              <button class="element__place-btn"></button>
             </div>
           </li>
       </section>
@@ -129,13 +129,13 @@
   <div class="popup">
     <div class="popup__overlay"></div>
     <div class="popup__content"><button class="popup__close-btn" type="button"></button>
-    <h2 class="popup__title">Редактировать профиль</h2>
-    <fieldset class="popup__input-container popup__input-container_ctrl_texts">
-      <label for="name" class="popup__label"></label>
-      <input type="text" class="popup__text" id="name" name="name" placeholder="Жак-Ив Кусто">
-      <label for="description" class="popup__label"></label>
-      <input type="text" class="popup__text" id="description" name="description" placeholder="Исследователь океана">
-    </fieldset>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <fieldset class="popup__input-container">
+        <label for="name" class="popup__label"></label>
+        <input type="text" class="popup__text" id="name" name="name" placeholder="Жак-Ив Кусто">
+        <label for="description" class="popup__label"></label>
+        <input type="text" class="popup__text" id="description" name="description" placeholder="Исследователь океана">
+      </fieldset>
       <button type="submit" class="popup__save-btn popup__save-btn_disabled">Сохранить</button>
     </div>
   </div>

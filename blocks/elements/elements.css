@@ -1,6 +1,6 @@
 .elements {
   padding: 36px 0 0 0;
-  font-family: 'Inter';
+  font-family: 'Inter', Arial, sans-serif;
 }
 
 @media screen and (min-width: 1024px) {

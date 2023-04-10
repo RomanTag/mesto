@@ -1,4 +1,4 @@
-const openPopupBtn = document.querySelector('.profile__edit-button');
+const openPopupBtn = document.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
 const popupCloseBtn = popup.querySelector('.popup__close-btn');
 const jobInput = document.querySelector('#description');
@@ -23,8 +23,8 @@ function handleFormSubmit (evt) {
 }
 
 function handlePopupClose() {
-  jobInput.value = '';
   nameInput.value = '';
+  jobInput.value = '';
   togglePopup();
 }
 openPopupBtn.addEventListener('click', togglePopup);
