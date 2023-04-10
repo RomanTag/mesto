@@ -1,11 +1,9 @@
 .profile__name {
-  margin: 0;
   max-width: 75%;
   font-weight: 500;
   /* font-size: calc((100vw - 320px) / (1280 - 320) * (42 - 27) + 27px);
   line-height: calc((100vw - 320px) / (1280 - 320) * (48 - 33) + 27px); */
   font-style: normal;
-  font-weight: 500;
   font-size: 27px;
   line-height: 33px;
   text-align: center;
