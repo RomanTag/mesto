@@ -10,16 +10,9 @@
   height: auto;
   border: none;
   transition: opacity .2s linear;
-  transition: transform .2s ease-in;
 }
 
 .element__place-btn:hover {
   opacity: .5;
   cursor: pointer;
-}
-
-.element__place-btn:active {
-  background-image: url(../../../images/elements/heart_b.svg);
-  transform: scale(.8);
-  opacity: 1;
 }

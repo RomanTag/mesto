@@ -34,6 +34,7 @@
 @import url(../blocks/profile/__data/profile__data.css);
 @import url(../blocks/profile/__edit-btn/profile__edit-btn.css);
 @import url(../blocks/profile/__add-btn/profile__add-btn.css);
+@import url(../blocks/profile/__info-conteiner/profile__info-conteiner.css);
 
 
 /* section elements */
@@ -45,6 +46,7 @@
 @import url(../blocks/element/__place-title/element__place-title.css);
 @import url(../blocks/element/__place-image/element__place-image.css);
 @import url(../blocks/element/__place-btn/element__place-btn.css);
+@import url(../blocks/element/__place-btn/_active/element__place-btn_active.css);
 
 
 /* footer */
@@ -62,5 +64,5 @@
 @import url(../blocks/popup/__label/popup__label.css);
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__save-btn/popup__save-btn.css);
-@import url(../blocks/popup/__opened/popup__opened.css);
+@import url(../blocks/popup/_active/popup_active.css);
 @import url(../blocks/popup/__overlay/popup__overlay.css);

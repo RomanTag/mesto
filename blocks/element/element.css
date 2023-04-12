@@ -4,20 +4,21 @@
   color: #000;
   display: grid;
   justify-content: center;
+  justify-items: center;
   row-gap: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
   .element {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 0.4fr);
     justify-items: center;
+    column-gap: 2%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .element {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: .6em;
   }
 }

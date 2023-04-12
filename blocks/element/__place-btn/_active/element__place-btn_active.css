@@ -1,0 +1,5 @@
+.element__place-btn_active {
+  background-image: url(../../../images/elements/heart_b.svg);
+}
+
+/* на сколько я понял по примеру popup, этот модификатор не присваиваю блоку в HTML, а буду управлять этим с помощью js? */

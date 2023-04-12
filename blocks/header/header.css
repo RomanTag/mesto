@@ -3,9 +3,9 @@
   display: flex;
   justify-content: start;
   min-width: 288px;
-  border-bottom: solid 1px #545454;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
   padding: 28px 0 0 0;
-  transition: all 0.3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 @media screen and (min-width: 1024px) {

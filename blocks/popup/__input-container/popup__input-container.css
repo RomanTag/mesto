@@ -7,12 +7,14 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  padding: 54px 0 0 0;
+  padding: 65px 0 0 0;
   gap: 6px;
+  gap: 17px;
 }
 
 @media screen and (min-width: 1024px) {
   .popup__input-container {
-    padding: 25px 0 0 0;
+    padding: 36px 0 0 0;
+
   }
 }

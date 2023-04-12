@@ -1,6 +1,7 @@
 .profile__avatar-image {
   box-sizing: border-box;
   border-radius: 50%;
-  max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
 }

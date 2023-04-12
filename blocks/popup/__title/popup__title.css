@@ -8,15 +8,12 @@
 
 @media screen and (min-width: 768px) {
   .popup__title {
-    font-size: 23px;
-    padding-top: 20px;
+
   }
 }
 
 @media screen and (min-width: 1024px) {
   .popup__title {
-    font-style: normal;
-    font-weight: 900;
     font-size: 24px;
     line-height: 29px;
     padding: 0;
