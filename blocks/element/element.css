@@ -6,7 +6,6 @@
   justify-content: center;
   justify-items: center;
   row-gap: 20px;
-  transition: all .3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {

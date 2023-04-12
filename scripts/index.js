@@ -6,7 +6,6 @@ const jobInput = document.querySelector('#description');
 const formElement = document.querySelector('.popup__input-container');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
-console.log(nameInputprofile);
 
 // открытие/закрытие попапа
 
