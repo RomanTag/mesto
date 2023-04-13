@@ -10,13 +10,13 @@ const jobInfoProfile = document.querySelector('.profile__data');
 // открытие/закрытие попапа
 
 function openPopup() {
-  popup.classList.add('popup_active');
+  popup.classList.add('popup_opened');
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
 }
 
 function closePoup() {
-  popup.classList.remove('popup_active');
+  popup.classList.remove('popup_opened');
 }
 
 // сохранить данные из input
