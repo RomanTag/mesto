@@ -9,6 +9,7 @@
   overflow: hidden;
   box-sizing: border-box;
   margin: 4px 1px 7px 27px;
+  max-width: 189px;
 }
 
 @media screen and (min-width: 1024px) {
