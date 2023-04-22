@@ -9,3 +9,7 @@
   height: 39px;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
+
+.popup__text::placeholder {
+  color: #C4C4C4;
+}
