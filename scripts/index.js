@@ -1,20 +1,21 @@
 
 // popups
-
+const popup = document.querySelector('.popup');
 const formElement = document.querySelector('.popup__input-container');
 const popupCloseBtn = document.querySelector('.popup__close-btn');
 
 //popup 1 (edit profile)
 
-const popup = document.querySelector('.popup');
+const popupEdit = document.querySelector('.popup__edit');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
 
 //popup 2 (edit add elements)
 
-const popupElements = document.querySelector('.popup__add-elements');
+const popupAdd = document.querySelector('.popup__add');
 const openPopupAddBtn = document.querySelector('.profile__add-btn');
+
 
 // profile
 
@@ -26,27 +27,29 @@ const jobInfoProfile = document.querySelector('.profile__data');
 // открытие/закрытие попапа
 
 function openPopup() {
-  popup.classList.add('popup_opened');
+  popupEdit.classList.add('popup__edit_opened');
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
-  console.log(popup_opened);
+  console.log(popupEdit);
 }
 
 
-function closePoup() {
-  popup.classList.remove('popup_opened');
+function closePopup() {
+  popupEdit.classList.remove('popup__edit_opened');
   // popupSave.classList.add('popup_opened');
+  console.log(popupAdd);
 }
+
+// popup 2
 
 function openPopupAdd() {
-  popupElements.classList.add('popup_opened');
-
+  popupAdd.classList.add('popup__add_opened');
+  console.log(popupAdd);
 }
 
 
-function closePoupAdd() {
-  popupElements.classList.remove('popup_opened');
-  // popupAdd.classList.add('popup_opened');
+function closePopupAdd() {
+  popupAdd.classList.remove('popup__add_opened');
 }
 
 // сохранить данные из input
@@ -55,13 +58,11 @@ function handleFormSubmit (evt) {
     evt.preventDefault();
     nameInputprofile.textContent = nameInput.value;
     jobInfoProfile.textContent = jobInput.value;
-    closePoup();
+    closePopup();
 }
 
 
 openPopupBtn.addEventListener('click', openPopup);
-popupCloseBtn.addEventListener('click', closePoup);
+popupCloseBtn.addEventListener('click', closePopup);
 formElement.addEventListener('submit', handleFormSubmit);
 openPopupAddBtn.addEventListener('click', openPopupAdd);
-popupCloseBtn.addEventListener('click', closePoupAdd);
-
