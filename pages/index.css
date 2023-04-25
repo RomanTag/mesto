@@ -37,16 +37,18 @@
 @import url(../blocks/profile/__info-conteiner/profile__info-conteiner.css);
 
 
-/* section elements */
+/* section places */
 
-@import url(../blocks/elements/elements.css);
-@import url(../blocks/element/element.css);
-@import url(../blocks/element/__list/element__list.css);
-@import url(../blocks/element/__place/element__place.css);
-@import url(../blocks/element/__place-title/element__place-title.css);
-@import url(../blocks/element/__place-image/element__place-image.css);
-@import url(../blocks/element/__place-btn/element__place-btn.css);
-@import url(../blocks/element/__place-btn/_active/element__place-btn_active.css);
+@import url(../blocks/places/places.css);
+@import url(../blocks/place/place.css);
+@import url(../blocks/place/__list/place__list.css);
+@import url(../blocks/place/__trash-btn/place__trash-btn.css);
+@import url(../blocks/place/__container/place__container.css);
+@import url(../blocks/place/__title/place__title.css);
+@import url(../blocks/place/__image/place__image.css);
+@import url(../blocks/place/__like-btn/place__like-btn.css);
+@import url(../blocks/place/__like-btn/_active/place__like-btn_active.css);
+
 
 
 /* footer */
@@ -57,7 +59,9 @@
 /* popup */
 
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__edit/popup__edit.css);
+/* @import url(../blocks/popup/__edit/popup__edit.css); */
+@import url(../blocks/popup/__add/popup__add.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__close-btn/popup__close-btn.css);
 @import url(../blocks/popup/__add/_close-btn/popup__add_close-btn.css);
@@ -65,13 +69,5 @@
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__save-btn/popup__save-btn.css);
-@import url(../blocks/popup/__add/_opened/popup__add_opened.css);
-@import url(../blocks/popup/__edit/_opened/popup__edit_opened.css);
 @import url(../blocks/popup/__add/_input-container/popup__add_input-container.css);
 @import url(../blocks/popup/__add/_container/popup__add_container.css);
-
-
-/* popup__add */
-
-@import url(../blocks/popup/__add/popup__add.css);
-

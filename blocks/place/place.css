@@ -1,4 +1,4 @@
-.element {
+.place {
   margin: auto;
   padding: 0;
   color: #000;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .element {
+  .place {
     grid-template-columns: repeat(2, 0.4fr);
     justify-items: center;
     column-gap: 2%;
@@ -17,7 +17,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .element {
+  .place {
     grid-template-columns: repeat(3, 1fr);
   }
 }

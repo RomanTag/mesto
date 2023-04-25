@@ -46,72 +46,69 @@
         <button class="profile__add-btn" type="button"></button>
       </section>
 
-      <!-- section elements  -->
+      <!-- section places  -->
 
-      <section class="elements">
-        <ul class="element">
+      <section class="places">
+        <ul class="place">
 
           <!-- Риф Белиза -->
 
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="element__place">
-              <h2 class="element__place-title">Риф Белиза</h2>
-              <button class="element__place-btn" type="button"></button>
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
             </div>
           </li>
 
-          <!-- Галапагосские острова -->
+          <!-- Риф Белиза -->
 
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/2_Galapagos_Islandss.jpg"
-              alt="Галапагосские острова">
-            <div class="element__place">
-              <h2 class="element__place-title">Галапагосские острова</h2>
-              <button class="element__place-btn" type="button"></button>
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
+            </div>
+          </li> <!-- Риф Белиза -->
+
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
+            </div>
+          </li> <!-- Риф Белиза -->
+
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
+            </div>
+          </li> <!-- Риф Белиза -->
+
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
+            </div>
+          </li> <!-- Риф Белиза -->
+
+          <li class="place__list">
+            <button class="place__trash-btn" type="button"></button>
+            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+            <div class="place__container">
+              <h2 class="place__title">Риф Белиза</h2>
+              <button class="place__like-btn" type="button"></button>
             </div>
           </li>
 
-          <!-- Марианская впадина -->
-
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/3_Mariana_Trench.jpg" alt="Марианская впадина">
-            <div class="element__place">
-              <h2 class="element__place-title">Марианская Впадина</h2>
-              <button class="element__place-btn" type="button"></button>
-            </div>
-          </li>
-
-          <!-- Средиземное море -->
-
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/4_Mediterranean_Sea.jpg" alt="Средиземное море">
-            <div class="element__place">
-              <h2 class="element__place-title">Средиземное море</h2>
-              <button class="element__place-btn" type="button"></button>
-            </div>
-          </li>
-
-          <!-- Японское море -->
-
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/5_Sea_of_Japan.jpeg" alt="Японское море">
-            <div class="element__place">
-              <h2 class="element__place-title">Японское море</h2>
-              <button class="element__place-btn" type="button"></button>
-            </div>
-          </li>
-
-          <!-- Антарктида -->
-
-          <li class="element__list">
-            <img class="element__place-image" src="./images/elements/6_Antarctica.jpg" alt="Антарктида">
-            <div class="element__place">
-              <h2 class="element__place-title">Антарктида</h2>
-              <button class="element__place-btn" type="button"></button>
-            </div>
-          </li>
-        </ul>
       </section>
     </main>
 
@@ -124,7 +121,7 @@
 
   <!-- popup -->
 
-  <div class="popup__edit">
+  <div class="popup">
     <div class="popup__container">
       <button class="popup__close-btn" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -138,7 +135,7 @@
 
   <!-- popup -->
 
-  <div class="popup__add">
+  <div class="popup popup__add">
     <div class="popup__container ">
       <button class="popup__close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
@@ -149,6 +146,17 @@
       </form>
     </div>
   </div>
+
+  <template id="place-template">
+    <li class="place__list">
+      <button class="place__trash-btn" type="button"></button>
+      <img class="place__place-image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
+      <div class="place__place">
+        <h2 class="place__place-title">Риф Белиза</h2>
+        <button class="place__place-btn" type="button"></button>
+      </div>
+    </li>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 
