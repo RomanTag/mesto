@@ -1,4 +1,4 @@
-.place__trash-btn {
+.place__delete-btn {
   all: unset;
   position: absolute;
   padding: 0;
@@ -15,7 +15,7 @@
   transition: opacity .2s linear;
 }
 
-.place__trash-btn:hover {
+.place__delete-btn:hover {
   opacity: .5;
   cursor: pointer;
 }

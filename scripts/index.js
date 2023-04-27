@@ -17,6 +17,9 @@ const jobInput = document.querySelector('#description');
 const popupAdd = document.querySelector('.popup__add');
 const popupAddCloseBtn = popupAdd.querySelector('.popup__close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
+const nameInputElement = document.querySelector('#nameAdd');
+const linkInput = document.querySelector('#linkAdd');
+console.log(nameInputElement);
 
 
 // profile
@@ -25,23 +28,68 @@ const popupOpenPopupBtn = document.querySelector('.profile__edit-btn');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
 
+// place
 
-// полигон
+// temlate
 
-function createCards (nameValue, linkValue) {
-  const element = document.createElement('ul');
-  element.classList.add('element');
+import { places } from "./constants.js";
 
-  const artistElement = document.createElement('h4');
-  artistElement.classList.add('song__artist');
-  artistElement.textContent = artistvalue;
+const placeTemplate = document.getElementById('place-template');
+const placeList = document.querySelector('.place');
 
+const createPlaceElement = (placeData) => {
+  const placeElement = placeTemplate.content.querySelector('.place__list').cloneNode(true);
+  const placeImage = placeElement.querySelector('.place__image');
+  const placeTitle = placeElement.querySelector('.place__title');
+  const placeDeleteBtn = placeElement.querySelector('.place__delete-btn');
+  const placeLikeBtn = placeElement.querySelector('.place__like-btn');
+
+  placeTitle.textContent = placeData.name;
+  placeImage.src = placeData.link;
+  placeImage.alt = placeData.name;
+
+
+
+  const handleDelete = () => {
+    placeElement.remove();
+  };
+
+  const handleLike = (evt) => {
+    placeLikeBtn.classList.toggle('place__like-btn_active');
+  };
+
+  placeDeleteBtn.addEventListener('click', handleDelete);
+  placeLikeBtn.addEventListener('click', handleLike);
+
+
+  return placeElement;
 }
 
+places.forEach((place) => {
+  const element = createPlaceElement(place);
+  placeList.append(element);
+});
 
+// добавления карточки из инпутов
 
+const handleAddPlaceFormSubmit = (evt) => {
+  evt.preventDefault();
 
-//полигон
+  const newPlaceData = {
+    name: nameInputElement.value,
+    link: linkInput.value
+  };
+
+  const newPlaceElement = createPlaceElement(newPlaceData);
+  placeList.prepend(newPlaceElement);
+
+  nameInputElement.value = '';
+  linkInput.value = '';
+
+  closePopup(popupAdd);
+};
+
+popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
 
 
 // открытие/закрытие попапа
@@ -61,7 +109,6 @@ function handleFormSubmit (evt) {
     nameInputprofile.textContent = nameInput.value;
     jobInfoProfile.textContent = jobInput.value;
     closePopup(popup);
-    closePopup(popupAdd);
 }
 
 
@@ -69,6 +116,7 @@ popupOpenPopupBtn.addEventListener('click', () => {
   openPopup(popup);
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
+
 });
 
 popupCloseBtn.addEventListener('click', () => closePopup(popup));

@@ -49,66 +49,7 @@
       <!-- section places  -->
 
       <section class="places">
-        <ul class="place">
-
-          <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li>
-
-          <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li> <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li> <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li> <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li> <!-- Риф Белиза -->
-
-          <li class="place__list">
-            <button class="place__trash-btn" type="button"></button>
-            <img class="place__image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-            <div class="place__container">
-              <h2 class="place__title">Риф Белиза</h2>
-              <button class="place__like-btn" type="button"></button>
-            </div>
-          </li>
-
+        <ul class="place"></ul>
       </section>
     </main>
 
@@ -133,31 +74,47 @@
     </div>
   </div>
 
-  <!-- popup -->
+  <!-- popup 2 -->
 
   <div class="popup popup__add">
     <div class="popup__container ">
       <button class="popup__close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form action="#" name="popupForm" class="popup__input-container">
-        <input class="popup__text" id="name" name="nameAdd" placeholder="Название">
-        <input class="popup__text" id="link" name="linkAdd" placeholder="Ссылка на картинку">
+        <input class="popup__text" id="nameAdd" name="nameAdd" placeholder="Название">
+        <input class="popup__text" id="linkAdd" name="linkAdd" placeholder="Ссылка на картинку">
         <button type="submit" class="popup__save-btn">Создать</button>
       </form>
     </div>
   </div>
 
+  <!-- temlate -->
+
   <template id="place-template">
     <li class="place__list">
-      <button class="place__trash-btn" type="button"></button>
-      <img class="place__place-image" src="./images/elements/1_Belize_Barrier_Reef.jpg" alt="Риф Белиза">
-      <div class="place__place">
-        <h2 class="place__place-title">Риф Белиза</h2>
-        <button class="place__place-btn" type="button"></button>
+      <button class="place__delete-btn" type="button"></button>
+      <img class="place__image"/>
+      <div class="place__container">
+        <h2 class="place__title"></h2>
+        <button class="place__like-btn" type="button"></button>
       </div>
     </li>
   </template>
-  <script src="./scripts/index.js"></script>
+
+  <!-- pop image -->
+
+  <!-- <div class="popup popup__place">
+    <div class="popup__container ">
+      <button class="popup__close-btn" type="button"></button>
+      <h2 class="popup__title">Новое место</h2>
+      <form action="#" name="popupForm" class="popup__input-container">
+        <input class="popup__text" id="nameAdd" name="nameAdd" placeholder="Название">
+      </form>
+    </div>
+  </div> -->
+
+
+  <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>

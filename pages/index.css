@@ -42,7 +42,7 @@
 @import url(../blocks/places/places.css);
 @import url(../blocks/place/place.css);
 @import url(../blocks/place/__list/place__list.css);
-@import url(../blocks/place/__trash-btn/place__trash-btn.css);
+@import url(../blocks/place/__delete-btn/place__delete-btn.css);
 @import url(../blocks/place/__container/place__container.css);
 @import url(../blocks/place/__title/place__title.css);
 @import url(../blocks/place/__image/place__image.css);
