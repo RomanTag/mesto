@@ -1,6 +1,5 @@
 .popup__edit {
-  display: none;
-  position: fixed;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Inter', Arial, sans-serif;

@@ -1,3 +1,5 @@
 .popup_opened {
-  display: grid;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
 }

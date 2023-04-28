@@ -7,20 +7,18 @@ const popupCloseBtn = popup.querySelector('.popup__close-btn');
 
 //popup 1 (edit profile)
 
-// const popupEdit = document.querySelector('.popup__edit');
+const popupEdit = document.querySelector('.popup__edit');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
 
-//popup 2 (edit add elements)
+//popup 2 (add elements)
 
 const popupAdd = document.querySelector('.popup__add');
 const popupAddCloseBtn = popupAdd.querySelector('.popup__close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
 const nameInputElement = document.querySelector('#nameAdd');
 const linkInput = document.querySelector('#linkAdd');
-console.log(nameInputElement);
-
 
 // profile
 
@@ -28,7 +26,10 @@ const popupOpenPopupBtn = document.querySelector('.profile__edit-btn');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
 
-// place
+// popup 3 (place)
+const popupPlace = document.querySelector('.popup__place');
+const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
+const popupPlaceTitle = document.querySelector('.popup__place_title');
 
 // temlate
 
@@ -58,9 +59,10 @@ const createPlaceElement = (placeData) => {
     placeLikeBtn.classList.toggle('place__like-btn_active');
   };
 
+  placeImage.addEventListener('click', () => togglePopup(popupPlace, placeImage));
+
   placeDeleteBtn.addEventListener('click', handleDelete);
   placeLikeBtn.addEventListener('click', handleLike);
-
 
   return placeElement;
 }
@@ -70,7 +72,33 @@ places.forEach((place) => {
   placeList.append(element);
 });
 
-// добавления карточки из инпутов
+// функция открытия и закрытия попапов
+
+const togglePopup = function (popup, placeImage) {
+  popup.classList.toggle('popup_opened')
+
+  if (placeImage) {
+    popup.querySelector('.popup__image').src = placeImage.src;
+    popupPlaceTitle.textContent = placeImage.alt;
+  }
+};
+
+
+
+// popup 1. заполнение импутов значением
+
+
+
+// popup 1. сохранение инпутов
+
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+  nameInputprofile.textContent = nameInput.value;
+  jobInfoProfile.textContent = jobInput.value;
+  togglePopup(popupEdit);
+}
+
+// popup 2. добавления карточки из инпутов
 
 const handleAddPlaceFormSubmit = (evt) => {
   evt.preventDefault();
@@ -86,44 +114,25 @@ const handleAddPlaceFormSubmit = (evt) => {
   nameInputElement.value = '';
   linkInput.value = '';
 
-  closePopup(popupAdd);
+  togglePopup(popupAdd);
+  togglePopup(newPlaceElement.querySelector('.place__image'));
 };
 
-popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
-
-
-// открытие/закрытие попапа
-
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-}
-
-
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-}
-
-
-function handleFormSubmit (evt) {
-    evt.preventDefault();
-    nameInputprofile.textContent = nameInput.value;
-    jobInfoProfile.textContent = jobInput.value;
-    closePopup(popup);
-}
-
+// слушатели
 
 popupOpenPopupBtn.addEventListener('click', () => {
-  openPopup(popup);
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
-
 });
 
-popupCloseBtn.addEventListener('click', () => closePopup(popup));
-
 formElement.addEventListener('submit', handleFormSubmit);
+popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
 
-popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
-popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
+popupOpenPopupBtn.addEventListener('click', () => togglePopup(popupEdit));
+popupCloseBtn.addEventListener('click', () => togglePopup(popupEdit));
+popupAddOpenBtn.addEventListener('click', () => togglePopup(popupAdd));
+popupAddCloseBtn.addEventListener('click', () => togglePopup(popupAdd));
+popupPlaceCloseBtn.addEventListener('click', () => togglePopup(popupPlace));
 
-console.log();
+
+// console.log();

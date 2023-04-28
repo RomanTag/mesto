@@ -62,7 +62,7 @@
 
   <!-- popup -->
 
-  <div class="popup">
+  <div class="popup popup__edit">
     <div class="popup__container">
       <button class="popup__close-btn" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
@@ -77,7 +77,7 @@
   <!-- popup 2 -->
 
   <div class="popup popup__add">
-    <div class="popup__container ">
+    <div class="popup__container">
       <button class="popup__close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form action="#" name="popupForm" class="popup__input-container">
@@ -87,6 +87,18 @@
       </form>
     </div>
   </div>
+
+    <!-- popup image -->
+
+    <div class="popup popup__place">
+      <div class="popup__place-container">
+        <button class="popup__place-close-btn" type="button"></button>
+        <figure class="popup__figure">
+          <img class="popup__image" src="">
+          <figcaption class="popup__place_title"></figcaption>
+        </figure>
+      </div>
+    </div>
 
   <!-- temlate -->
 
@@ -101,17 +113,7 @@
     </li>
   </template>
 
-  <!-- pop image -->
 
-  <!-- <div class="popup popup__place">
-    <div class="popup__container ">
-      <button class="popup__close-btn" type="button"></button>
-      <h2 class="popup__title">Новое место</h2>
-      <form action="#" name="popupForm" class="popup__input-container">
-        <input class="popup__text" id="nameAdd" name="nameAdd" placeholder="Название">
-      </form>
-    </div>
-  </div> -->
 
 
   <script type="module" src="./scripts/index.js"></script>
