@@ -48,7 +48,7 @@
 
       <!-- section places  -->
 
-      <section class="places">
+      <section class="places" aria-label="label-description">
         <ul class="place"></ul>
       </section>
     </main>
@@ -60,7 +60,7 @@
     </footer>
   </div>
 
-  <!-- popup -->
+  <!-- popup 1 edit profile -->
 
   <div class="popup popup__edit">
     <div class="popup__container">
@@ -74,7 +74,7 @@
     </div>
   </div>
 
-  <!-- popup 2 -->
+  <!-- popup 2 add place -->
 
   <div class="popup popup__add">
     <div class="popup__container">
@@ -88,24 +88,24 @@
     </div>
   </div>
 
-    <!-- popup image -->
+  <!-- popup 3 open image -->
 
-    <div class="popup popup__place">
-      <div class="popup__place-container">
-        <button class="popup__place-close-btn" type="button"></button>
-        <figure class="popup__figure">
-          <img class="popup__image" src="">
-          <figcaption class="popup__place_title"></figcaption>
-        </figure>
-      </div>
+  <div class="popup popup__place">
+    <div class="popup__place-container">
+      <button class="popup__place-close-btn" type="button"></button>
+      <figure class="popup__figure">
+        <img class="popup__image" src="#" alt="#">
+        <figcaption class="popup__place_title"></figcaption>
+      </figure>
     </div>
+  </div>
 
   <!-- temlate -->
 
   <template id="place-template">
     <li class="place__list">
       <button class="place__delete-btn" type="button"></button>
-      <img class="place__image"/>
+      <img class="place__image">
       <div class="place__container">
         <h2 class="place__title"></h2>
         <button class="place__like-btn" type="button"></button>
@@ -113,8 +113,7 @@
     </li>
   </template>
 
-
-
+  <!-- script -->
 
   <script type="module" src="./scripts/index.js"></script>
 </body>
