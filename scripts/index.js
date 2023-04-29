@@ -9,12 +9,13 @@ const jobInfoProfile = document.querySelector('.profile__data');
 
 // popups
 const popup = document.querySelector('.popup');
-const popupCloseBtn = popup.querySelector('.popup__close-btn');
+
 
 //popup 1 (edit profile)
 
 const formEditElement = document.getElementById('popupEditForm');
 const popupEdit = document.querySelector('.popup_type_edit');
+const popupEditCloseBtn = popup.querySelector('.popup__edit-close-btn');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
@@ -22,7 +23,7 @@ const jobInput = document.querySelector('#description');
 
 const formAddElement = document.getElementById('popupAddForm');
 const popupAdd = document.querySelector('.popup_type_add');
-const popupAddCloseBtn = popupAdd.querySelector('.popup__close-btn');
+const popupAddCloseBtn = popupAdd.querySelector('.popup__add-close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
 const nameInputElement = document.querySelector('#nameAdd');
 const linkInput = document.querySelector('#linkAdd');
@@ -31,6 +32,7 @@ const linkInput = document.querySelector('#linkAdd');
 const popupPlace = document.querySelector('.popup_type_place');
 const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
 const popupPlaceTitle = document.querySelector('.popup__place-title');
+const popupImage = popupPlace.querySelector('.popup__image');
 
 // place
 
@@ -78,9 +80,14 @@ const createPlaceElement = (placeData) => {
   placeDeleteBtn.addEventListener('click', handleDelete);
   placeLikeBtn.addEventListener('click', handleLike);
 
-  // слушатель открытия фотографии
+  // слушатель открытия фотографий
 
-  placeImage.addEventListener('click', () => togglePopup(popupPlace, placeImage));
+  placeImage.addEventListener('click', () => {
+    popupPlaceTitle.textContent = placeTitle.textContent;
+    popupImage.src = placeImage.src;
+    popupImage.alt = placeImage.alt;
+    openPopup(popupPlace, placeImage);
+  });
 
   // возвращаю готовый элемент
 
@@ -99,24 +106,49 @@ places.forEach((place) => {
 
 // функция открытия и закрытия попапов
 
-const togglePopup = function (popup, placeImage) {
-  popup.classList.toggle('popup_opened')
+// const togglePopup = function (popup, placeImage) {
+//   popup.classList.toggle('popup_opened')
 
-  // реализовываем открытие фотографий
+//   // реализовываем открытие фотографий
 
-  if (placeImage) {
-    popup.querySelector('.popup__image').src = placeImage.src;
-    popupPlaceTitle.textContent = placeImage.alt;
+//   if (placeImage) {
+//     popup.querySelector('.popup__image').src = placeImage.src;
+//     popupPlaceTitle.textContent = placeImage.alt;
+//   }
+// };
+
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened')
+}
+
+function closePopupEditByClick(evt) {
+  let isOverlay = evt.target.classList.contains("popup_type_edit");
+  let isCloseBtn = evt.target.classList.contains("popup__edit-close-btn");
+  if (isOverlay || isCloseBtn) {
+    closePopup(popupEdit);
   }
 };
 
+function closePopupAddByClick(evt) {
+  let isOverlay = evt.target.classList.contains("popup_type_add");
+  let isCloseBtn = evt.target.classList.contains("popup__add-close-btn");
+  if (isOverlay || isCloseBtn) {
+    closePopup(popupAdd);
+  }
+};
+
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened')
+}
+
+
 // popup 1. сохраненяем инпуты
 
-function handleFormSubmit(evt) {
+function handleEditFormSubmit(evt) {
   evt.preventDefault();
   nameInputprofile.textContent = nameInput.value;
   jobInfoProfile.textContent = jobInput.value;
-  togglePopup(popupEdit);
+  closePopup(popupEdit);
 }
 
 // заполняем инпуты значением из страницы
@@ -128,7 +160,7 @@ popupOpenPopupBtn.addEventListener('click', () => {
 
 // popup 2. добавляем карточки через инпуты
 
-const handleAddPlaceFormSubmit = (evt) => {
+const handleAddFormSubmit = (evt) => {
   evt.preventDefault();
 
   const newPlaceData = {
@@ -143,25 +175,38 @@ const handleAddPlaceFormSubmit = (evt) => {
 
   // отчищаем инпуты
 
-  nameInputElement.value = '';
-  linkInput.value = '';
+  formAddElement.reset();
 
   //закрываем попап
 
-  togglePopup(popupAdd);
+  closePopup(popupAdd);
+
+};
+
+//popup 3
+
+function closePopupPlaceByClick(evt) {
+  let isOverlay = evt.target.classList.contains("popup_type_place");
+  let isCloseBtn = evt.target.classList.contains("popup__place-close-btn");
+  if (isOverlay || isCloseBtn) {
+    closePopup(popupPlace);
+  }
 };
 
 // слушатели
 
-formEditElement.addEventListener('submit', handleFormSubmit);
-formAddElement.addEventListener('submit', handleFormSubmit);
+formEditElement.addEventListener('submit', handleEditFormSubmit);
+formAddElement.addEventListener('submit', handleAddFormSubmit);
+// popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
+popupOpenPopupBtn.addEventListener('click', () => openPopup(popupEdit));
+popupEdit.addEventListener('click', closePopupEditByClick);
+popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
+popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
+popupAdd.addEventListener('click', closePopupAddByClick);
+popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
+popupPlaceCloseBtn.addEventListener('click', () => closePopup(popupPlace));
+popupPlace.addEventListener('click', closePopupPlaceByClick);
+// popupImage.addEventListener('click', () => closePopup(popupPlace));
 
-popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
-
-popupOpenPopupBtn.addEventListener('click', () => togglePopup(popupEdit));
-popupCloseBtn.addEventListener('click', () => togglePopup(popupEdit));
-popupAddOpenBtn.addEventListener('click', () => togglePopup(popupAdd));
-popupAddCloseBtn.addEventListener('click', () => togglePopup(popupAdd));
-popupPlaceCloseBtn.addEventListener('click', () => togglePopup(popupPlace));
 
 // console.log();

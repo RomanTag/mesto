@@ -1,4 +1,4 @@
-.popup__close-btn {
+.popup__edit-close-btn {
   all: unset;
   width: 20px;
   height: 20px;
@@ -10,14 +10,14 @@
   transition: opacity .2s linear;
 }
 
-.popup__close-btn:hover {
+.popup__edit-close-btn:hover {
   opacity: .6;
   cursor: pointer;
 }
 
 
 @media screen and (min-width: 768px) {
-  .popup__close-btn {
+  .popup__edit-close-btn {
     width: 26px;
     height: 26px;
     left: 313px;
@@ -25,7 +25,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .popup__close-btn {
+  .popup__edit-close-btn {
     width: 32px;
     height: 32px;
     left: 438px;
