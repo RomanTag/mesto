@@ -80,7 +80,7 @@ const createPlaceElement = (placeData) => {
   placeDeleteBtn.addEventListener('click', handleDelete);
   placeLikeBtn.addEventListener('click', handleLike);
 
-  // слушатель открытия фотографий
+  // popup 3 слушатель открытия фотографий
 
   placeImage.addEventListener('click', () => {
     popupPlaceTitle.textContent = placeTitle.textContent;
