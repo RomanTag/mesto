@@ -9,17 +9,18 @@ const jobInfoProfile = document.querySelector('.profile__data');
 
 // popups
 const popup = document.querySelector('.popup');
-const formElement = document.querySelector('.popup__input-container');
 const popupCloseBtn = popup.querySelector('.popup__close-btn');
 
 //popup 1 (edit profile)
 
+const formEditElement = document.getElementById('popupEditForm');
 const popupEdit = document.querySelector('.popup_type_edit');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
 //popup 2 (add elements)
 
+const formAddElement = document.getElementById('popupAddForm');
 const popupAdd = document.querySelector('.popup_type_add');
 const popupAddCloseBtn = popupAdd.querySelector('.popup__close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
@@ -152,7 +153,9 @@ const handleAddPlaceFormSubmit = (evt) => {
 
 // слушатели
 
-formElement.addEventListener('submit', handleFormSubmit);
+formEditElement.addEventListener('submit', handleFormSubmit);
+formAddElement.addEventListener('submit', handleFormSubmit);
+
 popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
 
 popupOpenPopupBtn.addEventListener('click', () => togglePopup(popupEdit));
