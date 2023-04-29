@@ -14,22 +14,22 @@ const popupCloseBtn = popup.querySelector('.popup__close-btn');
 
 //popup 1 (edit profile)
 
-const popupEdit = document.querySelector('.popup__edit');
+const popupEdit = document.querySelector('.popup_edit');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
 //popup 2 (add elements)
 
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_add');
 const popupAddCloseBtn = popupAdd.querySelector('.popup__close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
 const nameInputElement = document.querySelector('#nameAdd');
 const linkInput = document.querySelector('#linkAdd');
 
 // popup 3 (place)
-const popupPlace = document.querySelector('.popup__place');
-const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
-const popupPlaceTitle = document.querySelector('.popup__place_title');
+const popupPlace = document.querySelector('.popup_place');
+const popupPlaceCloseBtn = document.querySelector('.popup__close-btn_place');
+const popupPlaceTitle = document.querySelector('.popup__title_place');
 
 // place
 
