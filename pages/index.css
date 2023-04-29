@@ -68,20 +68,20 @@
 
 /* popup edit */
 
-@import url(../blocks/popup/_edit/popup_edit.css);
+@import url(../blocks/popup/type/popup_type_edit.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 
 /* popup add */
 
-@import url(../blocks/popup/_add/popup_add.css);
+@import url(../blocks/popup/type/popup_type_add.css);
 
 /* popup place */
-@import url(../blocks/popup/_place/popup_place.css);
-@import url(../blocks/popup/__close-btn/_place/popup__close-btn_place.css);
+@import url(../blocks/popup/type/popup_type_place.css);
+@import url(../blocks/popup/__place-close-btn/popup__place-close-btn.css);
 @import url(../blocks/popup/__figure/popup__figure.css);
-@import url(../blocks/popup/__container/_place/popup__container_place.css);
+@import url(../blocks/popup/__place-container/popup__place-container.css);
 @import url(../blocks/popup/__image/popup__image.css);
-@import url(../blocks/popup/__title/_place/popup__title_place.css);
+@import url(../blocks/popup/__place-title/popup__place-title.css);
 
 
 
