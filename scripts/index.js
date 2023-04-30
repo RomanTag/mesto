@@ -3,19 +3,15 @@
 
 // profile
 
-const popupOpenPopupBtn = document.querySelector('.profile__edit-btn');
+const popupEditOpenBtn = document.querySelector('.profile__edit-btn');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
-
-// popups
-const popup = document.querySelector('.popup');
-
 
 //popup 1 (edit profile)
 
 const formEditElement = document.getElementById('popupEditForm');
 const popupEdit = document.querySelector('.popup_type_edit');
-const popupEditCloseBtn = popup.querySelector('.popup__edit-close-btn');
+const popupEditCloseBtn = document.querySelector('.popup__edit-close-btn');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
 
@@ -106,41 +102,13 @@ places.forEach((place) => {
 
 // функция открытия и закрытия попапов
 
-// const togglePopup = function (popup, placeImage) {
-//   popup.classList.toggle('popup_opened')
-
-//   // реализовываем открытие фотографий
-
-//   if (placeImage) {
-//     popup.querySelector('.popup__image').src = placeImage.src;
-//     popupPlaceTitle.textContent = placeImage.alt;
-//   }
-// };
-
 const openPopup = (popup) => {
   popup.classList.add('popup_opened')
 }
 
-function closePopupEditByClick(evt) {
-  let isOverlay = evt.target.classList.contains("popup_type_edit");
-  let isCloseBtn = evt.target.classList.contains("popup__edit-close-btn");
-  if (isOverlay || isCloseBtn) {
-    closePopup(popupEdit);
-  }
-};
-
-function closePopupAddByClick(evt) {
-  let isOverlay = evt.target.classList.contains("popup_type_add");
-  let isCloseBtn = evt.target.classList.contains("popup__add-close-btn");
-  if (isOverlay || isCloseBtn) {
-    closePopup(popupAdd);
-  }
-};
-
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened')
 }
-
 
 // popup 1. сохраненяем инпуты
 
@@ -153,7 +121,8 @@ function handleEditFormSubmit(evt) {
 
 // заполняем инпуты значением из страницы
 
-popupOpenPopupBtn.addEventListener('click', () => {
+popupEditOpenBtn.addEventListener('click', () => {
+  openPopup(popupEdit);
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
 });
@@ -180,33 +149,15 @@ const handleAddFormSubmit = (evt) => {
   //закрываем попап
 
   closePopup(popupAdd);
-
-};
-
-//popup 3
-
-function closePopupPlaceByClick(evt) {
-  let isOverlay = evt.target.classList.contains("popup_type_place");
-  let isCloseBtn = evt.target.classList.contains("popup__place-close-btn");
-  if (isOverlay || isCloseBtn) {
-    closePopup(popupPlace);
-  }
 };
 
 // слушатели
 
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 formAddElement.addEventListener('submit', handleAddFormSubmit);
-// popupAdd.addEventListener('submit', handleAddPlaceFormSubmit);
-popupOpenPopupBtn.addEventListener('click', () => openPopup(popupEdit));
-popupEdit.addEventListener('click', closePopupEditByClick);
 popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
 popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
-popupAdd.addEventListener('click', closePopupAddByClick);
 popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
 popupPlaceCloseBtn.addEventListener('click', () => closePopup(popupPlace));
-popupPlace.addEventListener('click', closePopupPlaceByClick);
-// popupImage.addEventListener('click', () => closePopup(popupPlace));
 
-
-// console.log();
+console.log('Cпасибо за правки, действительно много в чем еще предстоит разобраться. С оверлеем отложу на потом, с объявлением попапа и с кликом все понял)');
