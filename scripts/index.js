@@ -39,7 +39,9 @@ const placeList = document.querySelector('.place');
 
 // импортирую контент который будет загружаться со страницей
 
-import { places } from "./constants.js";
+// import { places } from "./constants.js";
+import { places } from "./rm_contents.js";
+
 
 // функция для создания элемента
 
@@ -159,5 +161,3 @@ popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
 popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
 popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
 popupPlaceCloseBtn.addEventListener('click', () => closePopup(popupPlace));
-
-console.log('Cпасибо за правки, действительно много в чем еще предстоит разобраться. С оверлеем отложу на потом, с объявлением попапа и с кликом все понял)');
