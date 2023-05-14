@@ -5,6 +5,8 @@ import { places } from "./rm_constants.js";
 
 import enableValidation from "./validate.js"
 
+import { disableBtn } from "./validate.js"
+
 // объявляю переменные
 
 // profile
@@ -138,7 +140,7 @@ const handlePopupClose = (evt) => {
 function handleEscClose(evt) {
   if (evt.key === 'Escape') {
     popupList.forEach(closePopup);
-    formAddElement.reset();
+    // formAddElement.reset();
   }
 };
 
@@ -182,6 +184,7 @@ const handleAddFormSubmit = (evt) => {
   //закрываем попап
 
   closePopup(popupAdd);
+
 };
 
 // валидирую
@@ -202,7 +205,14 @@ enableValidation(validationConfig);
 
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 formAddElement.addEventListener('submit', handleAddFormSubmit);
-popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
-popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
-popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
+// popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
+// popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
+popupAddOpenBtn.addEventListener('click', () => {
+  formAddElement.reset();
+  disableBtn(submitPlace, { inactiveButtonClass: 'popup__btn_invalid' });
+  openPopup(popupAdd);
+
+});
+
+// popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
 popupPlaceCloseBtn.addEventListener('click', () => closePopup(popupPlace));
