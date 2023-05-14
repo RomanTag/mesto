@@ -64,12 +64,18 @@
 
   <div class="popup popup_type_edit">
     <div class="popup__container">
-      <button class="popup__edit-close-btn" type="button"></button>
+      <button class="popup__close-btn popup__edit-close-btn" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form action="#" id="popupEditForm" name="popupEditForm" class="popup__input-container">
-        <input class="popup__text" id="name" name="name" placeholder="Введите имя">
-        <input class="popup__text" id="description" name="description" placeholder="Введите описание">
-        <button type="submit" class="popup__save-btn">Сохранить</button>
+      <form action="#" id="popupEditForm" name="popupEditForm" class="popup__form" novalidate>
+        <label class="popup__input-container">
+          <input type="text" class="popup__input" id="name" name="name" placeholder="Введите имя" minlength="2" maxlength="40" required>
+          <span id="error-name" class="popup__error-message error-message_hidden"></span>
+        </label>
+        <label class="popup__input-container">
+          <input type="text" class="popup__input" id="description" name="description" placeholder="Введите описание" minlength="2" maxlength="200" required>
+          <span id="error-description" class="popup__error-message error-message_hidden"></span>
+        </label>
+        <button type="submit" id="submit" class="popup__btn">Сохранить</button>
       </form>
     </div>
   </div>
@@ -78,12 +84,18 @@
 
   <div class="popup popup_type_add">
     <div class="popup__container">
-      <button class="popup__add-close-btn" type="button"></button>
+      <button class="popup__close-btn popup__add-close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form action="#" id="popupAddForm" name="popupAddForm" class="popup__input-container">
-        <input class="popup__text" id="nameAdd" name="nameAdd" placeholder="Название">
-        <input class="popup__text" id="linkAdd" name="linkAdd" placeholder="Ссылка на картинку">
-        <button type="submit" class="popup__save-btn">Создать</button>
+      <form action="#" id="popupAddForm" name="popupAddForm" class="popup__form" novalidate>
+        <label class="popup__input-container">
+          <input type="text" class="popup__input" id="place" name="place" placeholder="Название" minlength="2" maxlength="30" required>
+          <span id="error-place" class="popup__error-message error-message_hidden"></span>
+        </label>
+        <label class="popup__input-container">
+          <input type="url" class="popup__input" id="link" name="link" placeholder="Ссылка на картинку" required>
+          <span id="error-link" class="popup__error-message error-message_hidden"></span>
+        </label>
+        <button type="submit" id="submit" class="popup__btn">Создать</button>
       </form>
     </div>
   </div>
@@ -91,7 +103,7 @@
   <!-- popup 3 open image -->
 
   <div class="popup popup_type_place">
-      <div class="popup__place-container">
+    <div class="popup__place-container">
       <button class="popup__place-close-btn" type="button"></button>
       <figure class="popup__figure">
         <img class="popup__image" src="#" alt="#">

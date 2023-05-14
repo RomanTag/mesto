@@ -1,4 +1,10 @@
 
+// подключаю код
+
+import { places } from "./rm_contents.js";
+
+import enableValidation from "./validate.js"
+
 // объявляю переменные
 
 // profile
@@ -6,6 +12,10 @@
 const popupEditOpenBtn = document.querySelector('.profile__edit-btn');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
+
+//popup
+
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 //popup 1 (edit profile)
 
@@ -21,10 +31,11 @@ const formAddElement = document.getElementById('popupAddForm');
 const popupAdd = document.querySelector('.popup_type_add');
 const popupAddCloseBtn = popupAdd.querySelector('.popup__add-close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
-const nameInputElement = document.querySelector('#nameAdd');
-const linkInput = document.querySelector('#linkAdd');
+const nameInputElement = document.querySelector('#place');
+const linkInput = document.querySelector('#link');
 
 // popup 3 (place)
+
 const popupPlace = document.querySelector('.popup_type_place');
 const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
 const popupPlaceTitle = document.querySelector('.popup__place-title');
@@ -36,12 +47,6 @@ const placeTemplate = document.getElementById('place-template');
 const placeList = document.querySelector('.place');
 
 // temlate
-
-// импортирую контент который будет загружаться со страницей
-
-// import { places } from "./constants.js";
-import { places } from "./rm_contents.js";
-
 
 // функция для создания элемента
 
@@ -99,27 +104,53 @@ places.forEach((place) => {
   placeList.append(element);
 });
 
-
 // попапы
 
 // функция открытия и закрытия попапов
 
-const openPopup = (popup) => {
-  popup.classList.add('popup_opened')
-}
+// открываю попапы
 
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened')
-}
+const openPopup = (popupElement) => {
+  popupElement.classList.add('popup_opened');
+  document.addEventListener('click', handlePopupClose);
+  document.addEventListener('keydown', handleEscClose);
+};
+
+// закрываю попапы
+
+const closePopup = (popupElement) => {
+  popupElement.classList.remove('popup_opened');
+  document.removeEventListener('click', handlePopupClose);
+  document.removeEventListener('keydown', handleEscClose);
+};
+
+// закрываю попапы через оверлей и escape
+
+const handlePopupClose = (evt) => {
+  const isOverlay = evt.target.classList.contains('popup');
+  const isCloseBtn = evt.target.classList.contains('popup__close-btn');
+
+  if (isOverlay || isCloseBtn) {
+    popupList.forEach(closePopup);
+  }
+};
+
+function handleEscClose(evt) {
+  if (evt.key === 'Escape') {
+    popupList.forEach(closePopup);
+    formAddElement.reset();
+  }
+};
 
 // popup 1. сохраненяем инпуты
 
-function handleEditFormSubmit(evt) {
+const handleEditFormSubmit = (evt) => {
   evt.preventDefault();
   nameInputprofile.textContent = nameInput.value;
   jobInfoProfile.textContent = jobInput.value;
   closePopup(popupEdit);
-}
+};
+
 
 // заполняем инпуты значением из страницы
 
@@ -153,7 +184,21 @@ const handleAddFormSubmit = (evt) => {
   closePopup(popupAdd);
 };
 
+// валидирую
+
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__btn',
+  inactiveButtonClass: 'popup__btn_invalid',
+  inputErrorClass: 'popup__input-container_invalid',
+  errorClass: 'popup__error-message'
+};
+
+enableValidation(validationConfig);
+
 // слушатели
+
 
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 formAddElement.addEventListener('submit', handleAddFormSubmit);

@@ -1,19 +1,7 @@
 .popup__input-container {
   all: unset;
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  padding: 65px 0 0 0;
-  gap: 6px;
-  gap: 17px;
-}
-
-@media screen and (min-width: 1024px) {
-  .popup__input-container {
-    padding: 36px 0 0 0;
-  }
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
