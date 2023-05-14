@@ -25,8 +25,8 @@ const setEventListeners = (formToValidate, { inputSelector, submitButtonSelector
       } else {
         enableBtn(formBtn, rest)
       }
-    })
-  })
+    });
+  });
 }
 
 //проверяет инпут на валидность при наборе символов и выводит предупрждающие сообщения
