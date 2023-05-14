@@ -1,7 +1,7 @@
 
 // подключаю код
 
-import { places } from "./rm_contents.js";
+import { places } from "./rm_contants.js";
 
 import enableValidation from "./validate.js"
 
