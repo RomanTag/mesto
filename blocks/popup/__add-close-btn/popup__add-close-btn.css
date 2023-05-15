@@ -1,33 +1,18 @@
 .popup__add-close-btn {
-  all: unset;
-  width: 20px;
-  height: 20px;
-  background-size: 100% 100%;
-  position: absolute;
   left: 262px;
   top: -37px;
-  background-image: url(../../../images/popup/Close_Icon.svg);
-  transition: opacity .2s linear;
-}
 
-.popup__add-close-btn:hover {
-  opacity: .6;
-  cursor: pointer;
 }
 
 
 @media screen and (min-width: 768px) {
   .popup__add-close-btn {
-    width: 26px;
-    height: 26px;
     left: 313px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .popup__add-close-btn {
-    width: 32px;
-    height: 32px;
     left: 438px;
     top: -40px;
   }

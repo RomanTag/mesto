@@ -108,8 +108,6 @@ places.forEach((place) => {
 
 // попапы
 
-// функция открытия и закрытия попапов
-
 // открываю попапы
 
 const openPopup = (popupElement) => {
@@ -195,6 +193,7 @@ const validationConfig = {
   submitButtonSelector: '.popup__btn',
   inactiveButtonClass: 'popup__btn_invalid',
   inputErrorClass: 'popup__input-container_invalid',
+  inputContainerSelector: '.popup__input-container',
   errorClass: 'popup__error-message'
 };
 
@@ -213,6 +212,3 @@ popupAddOpenBtn.addEventListener('click', () => {
   openPopup(popupAdd);
 
 });
-
-// popupAddCloseBtn.addEventListener('click', () => closePopup(popupAdd));
-popupPlaceCloseBtn.addEventListener('click', () => closePopup(popupPlace));

@@ -32,18 +32,18 @@ const setEventListeners = (formToValidate, { inputSelector, submitButtonSelector
 
 //проверяет инпут на валидность при наборе символов и выводит предупрждающие сообщения
 
-const checkInputValidity = (input, { inputErrorClass }) => {
+const checkInputValidity = (input, { inputErrorClass, inputContainerSelector }) => {
   const currentInputErrorContainer = document.querySelector(`#error-${input.id}`);
 
-  console.log('Тут я нахожу класс ".popup__input-container", как понимаю это не правильно и для корректной реализации функции мне нужен еще один ключ? Но по заданию могу ли я его добавть объекту? И как это сделать, просто вписать в validationConfig? Буду очень признателен если объясните');
+  console.log('спасибо вам за объяснение, мне это помогло разобраться!');
 
   if (input.checkValidity()) {
     currentInputErrorContainer.textContent = '';
-    const containerEl = currentInputErrorContainer.closest('.popup__input-container');
+    const containerEl = currentInputErrorContainer.closest(inputContainerSelector);
     containerEl.classList.remove(inputErrorClass);
   } else {
     currentInputErrorContainer.textContent = input.validationMessage
-    const containerEl = currentInputErrorContainer.closest('.popup__input-container');
+    const containerEl = currentInputErrorContainer.closest(inputContainerSelector);
     containerEl.classList.add(inputErrorClass);
   }
 }
