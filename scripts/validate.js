@@ -35,8 +35,6 @@ const setEventListeners = (formToValidate, { inputSelector, submitButtonSelector
 const checkInputValidity = (input, { inputErrorClass, inputContainerSelector }) => {
   const currentInputErrorContainer = document.querySelector(`#error-${input.id}`);
 
-  console.log('спасибо вам за объяснение, мне это помогло разобраться!');
-
   if (input.checkValidity()) {
     currentInputErrorContainer.textContent = '';
     const containerEl = currentInputErrorContainer.closest(inputContainerSelector);
