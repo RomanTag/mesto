@@ -1,11 +1,13 @@
 
 // подключаю код
 
-import { places } from "./rm_constants.js";
+import { cards } from "./rm_constants.js";
 
 import enableValidation from "./validate.js"
 
 import { disableBtn } from "./validate.js"
+
+import { Card } from "./card.js"
 
 // объявляю переменные
 
@@ -43,68 +45,60 @@ const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
 const popupPlaceTitle = document.querySelector('.popup__place-title');
 const popupImage = popupPlace.querySelector('.popup__image');
 
-// place
+// card
 
-const placeTemplate = document.getElementById('place-template');
-const placeList = document.querySelector('.place');
+const selectorTemplate = '#card-template';
+console.log(selectorTemplate);
+const cardList = document.querySelector('.card');
+
 
 // temlate
 
+function addCard(cardData) {
+  const newCardElement = createNewCard(cardData);
+  cardList.prepend(newCardElement);
+}
+
 // функция для создания элемента
 
-const createPlaceElement = (placeData) => {
-
-  // объявляю переменные
-
-  const placeElement = placeTemplate.content.querySelector('.place__list').cloneNode(true);
-  const placeImage = placeElement.querySelector('.place__image');
-  const placeTitle = placeElement.querySelector('.place__title');
-  const placeDeleteBtn = placeElement.querySelector('.place__delete-btn');
-  const placeLikeBtn = placeElement.querySelector('.place__like-btn');
-
-  // присваиваю значения
-
-  placeTitle.textContent = placeData.name;
-  placeImage.src = placeData.link;
-  placeImage.alt = placeData.name;
-
-  // функция удаления карточки
-
-  const handleDelete = () => {
-    placeElement.remove();
-  };
-
-  // функция лайка
-
-  const handleLike = (evt) => {
-    placeLikeBtn.classList.toggle('place__like-btn_active');
-  };
-
-  // вешаю слушатели
-
-  placeDeleteBtn.addEventListener('click', handleDelete);
-  placeLikeBtn.addEventListener('click', handleLike);
-
-  // popup 3 слушатель открытия фотографий
-
-  placeImage.addEventListener('click', () => {
-    popupPlaceTitle.textContent = placeTitle.textContent;
-    popupImage.src = placeImage.src;
-    popupImage.alt = placeImage.alt;
-    openPopup(popupPlace, placeImage);
-  });
-
-  // возвращаю готовый элемент
-
-  return placeElement;
+function createNewCard(element) {
+  const card = new Card(element, selectorTemplate, handleCardImageClick);
+  console.log(card)
+  const cardElement = card.generateCard();
+  return cardElement;
 }
+
+
+
+function handleCardImageClick(cardData) {
+  popupPlaceTitle.textContent = cardData.name;
+  popupImage.src = cardData.link;
+  popupImage.alt = cardData.name;
+  openPopup(popupPlace);
+};
 
 // вставляем контент на страницу
 
-places.forEach((place) => {
-  const element = createPlaceElement(place);
-  placeList.append(element);
+cards.forEach(element => {
+  addCard(element);
 });
+
+// валидирую
+
+
+// class formValidator {
+//   constructor(config, form) {
+//     this._formSelector = config.formSelector;
+//     this._inputSelector = config.inputSelector;
+//     this._submitButtonSelector = config.submitButtonSelector;
+//     this._inactiveButtonClass = config.inactiveButtonClass;
+//     this._inputErrorClass = config.inputErrorClass;
+//     this._inputErrorClass = config.inputErrorClass;
+//     this._inputContainerSelector = config.inputContainerSelector
+//     this._errorClass = config.errorClass;
+//     this._form = form;
+//   }
+// }
 
 // попапы
 
@@ -165,15 +159,14 @@ popupEditOpenBtn.addEventListener('click', () => {
 const handleAddFormSubmit = (evt) => {
   evt.preventDefault();
 
-  const newPlaceData = {
+  const newCardData = {
     name: nameInputElement.value,
     link: linkInput.value
   };
 
-  // вставляем контент на страницу
+ // добавляем новую карточку на страницу
 
-  const newPlaceElement = createPlaceElement(newPlaceData);
-  placeList.prepend(newPlaceElement);
+ addCard(newCardData);
 
   // отчищаем инпуты
 
@@ -204,11 +197,10 @@ enableValidation(validationConfig);
 
 formEditElement.addEventListener('submit', handleEditFormSubmit);
 formAddElement.addEventListener('submit', handleAddFormSubmit);
-// popupEditCloseBtn.addEventListener('click', () => closePopup(popupEdit));
-// popupAddOpenBtn.addEventListener('click', () => openPopup(popupAdd));
 popupAddOpenBtn.addEventListener('click', () => {
   formAddElement.reset();
   disableBtn(submitPlace, { inactiveButtonClass: 'popup__btn_invalid' });
   openPopup(popupAdd);
 
 });
+

@@ -1,10 +1,10 @@
-.places {
+.cards {
   padding: 36px 0 0 0;
   font-family: 'Inter', Arial, sans-serif;
 }
 
 @media screen and (min-width: 1024px) {
-  .places {
+  .cards {
     padding: 50px 0 0 0;
   }
 }

@@ -1,4 +1,4 @@
-const places = [
+const cards = [
   {
     name: 'Газорпазорп',
     link: 'https://leonardo.osnova.io/c837b2f0-29e1-d74a-c0d5-e20e1d5ac867/'
@@ -24,4 +24,4 @@ const places = [
     link: 'https://leonardo.osnova.io/05ee0baf-1600-056e-ec97-31da81f3aae3/'
   }
 ];
-export { places };
+export { cards };
