@@ -1,19 +1,16 @@
-
-// подключаю код
+// Подключаю модули
 
 import { cards } from "./rm_constants.js";
 
-import enableValidation from "./validate.js"
-
-import { disableBtn } from "./validate.js"
-
 import { Card } from "./card.js"
+
+import { FormValidator } from "./FormValidator.js"
 
 // объявляю переменные
 
 // profile
 
-const popupEditOpenBtn = document.querySelector('.profile__edit-btn');
+const popupNameOpenBtn = document.querySelector('.profile__edit-btn');
 const nameInputprofile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
 
@@ -23,36 +20,34 @@ const popupList = Array.from(document.querySelectorAll('.popup'));
 
 //popup 1 (edit profile)
 
-const formEditElement = document.getElementById('popupEditForm');
-const popupEdit = document.querySelector('.popup_type_edit');
-const popupEditCloseBtn = document.querySelector('.popup__edit-close-btn');
+const formNameElement = document.getElementById('popupEditForm');
+const popupName = document.querySelector('.popup_type_edit');
 const nameInput = document.querySelector('#name');
 const jobInput = document.querySelector('#description');
+const formNameDataElement = document.forms.popupEditForm;
 
 //popup 2 (add elements)
 
 const formAddElement = document.getElementById('popupAddForm');
 const popupAdd = document.querySelector('.popup_type_add');
-const popupAddCloseBtn = popupAdd.querySelector('.popup__add-close-btn');
 const popupAddOpenBtn = document.querySelector('.profile__add-btn');
 const nameInputElement = document.querySelector('#place');
 const linkInput = document.querySelector('#link');
+const formCardDataElement = document.forms.popupAddForm;
 
 // popup 3 (place)
 
 const popupPlace = document.querySelector('.popup_type_place');
-const popupPlaceCloseBtn = document.querySelector('.popup__place-close-btn');
 const popupPlaceTitle = document.querySelector('.popup__place-title');
 const popupImage = popupPlace.querySelector('.popup__image');
 
 // card
 
 const selectorTemplate = '#card-template';
-console.log(selectorTemplate);
 const cardList = document.querySelector('.card');
 
 
-// temlate
+// template
 
 function addCard(cardData) {
   const newCardElement = createNewCard(cardData);
@@ -63,12 +58,9 @@ function addCard(cardData) {
 
 function createNewCard(element) {
   const card = new Card(element, selectorTemplate, handleCardImageClick);
-  console.log(card)
   const cardElement = card.generateCard();
   return cardElement;
 }
-
-
 
 function handleCardImageClick(cardData) {
   popupPlaceTitle.textContent = cardData.name;
@@ -85,20 +77,21 @@ cards.forEach(element => {
 
 // валидирую
 
+const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__btn',
+  inactiveButtonClass: 'popup__btn_invalid',
+  inputErrorClass: 'popup__input-container_invalid',
+  inputContainerSelector: '.popup__input-container',
+  errorClass: 'popup__error-message'
+};
 
-// class formValidator {
-//   constructor(config, form) {
-//     this._formSelector = config.formSelector;
-//     this._inputSelector = config.inputSelector;
-//     this._submitButtonSelector = config.submitButtonSelector;
-//     this._inactiveButtonClass = config.inactiveButtonClass;
-//     this._inputErrorClass = config.inputErrorClass;
-//     this._inputErrorClass = config.inputErrorClass;
-//     this._inputContainerSelector = config.inputContainerSelector
-//     this._errorClass = config.errorClass;
-//     this._form = form;
-//   }
-// }
+const formNameDataValidator = new FormValidator(validationConfig, formNameDataElement);
+formNameDataValidator.enableValidation()
+
+const formCardDataValidator = new FormValidator(validationConfig, formCardDataElement);
+formCardDataValidator.enableValidation()
 
 // попапы
 
@@ -132,29 +125,32 @@ const handlePopupClose = (evt) => {
 function handleEscClose(evt) {
   if (evt.key === 'Escape') {
     popupList.forEach(closePopup);
-    // formAddElement.reset();
   }
 };
 
 // popup 1. сохраненяем инпуты
 
-const handleEditFormSubmit = (evt) => {
+const handleNameFormSubmit = (evt) => {
   evt.preventDefault();
   nameInputprofile.textContent = nameInput.value;
   jobInfoProfile.textContent = jobInput.value;
-  closePopup(popupEdit);
+  closePopup(popupName);
 };
-
 
 // заполняем инпуты значением из страницы
 
-popupEditOpenBtn.addEventListener('click', () => {
-  openPopup(popupEdit);
+popupNameOpenBtn.addEventListener('click', () => {
+  formNameDataValidator.resetValidation();
+  openPopup(popupName);
   nameInput.value = nameInputprofile.textContent;
   jobInput.value = jobInfoProfile.textContent;
 });
 
-// popup 2. добавляем карточки через инпуты
+popupAddOpenBtn.addEventListener('click', () => {
+  formCardDataValidator.resetValidation();
+  formAddElement.reset();
+  openPopup(popupAdd);
+});
 
 const handleAddFormSubmit = (evt) => {
   evt.preventDefault();
@@ -164,9 +160,9 @@ const handleAddFormSubmit = (evt) => {
     link: linkInput.value
   };
 
- // добавляем новую карточку на страницу
+  // добавляем новую карточку на страницу
 
- addCard(newCardData);
+  addCard(newCardData);
 
   // отчищаем инпуты
 
@@ -178,29 +174,7 @@ const handleAddFormSubmit = (evt) => {
 
 };
 
-// валидирую
-
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__btn',
-  inactiveButtonClass: 'popup__btn_invalid',
-  inputErrorClass: 'popup__input-container_invalid',
-  inputContainerSelector: '.popup__input-container',
-  errorClass: 'popup__error-message'
-};
-
-enableValidation(validationConfig);
-
 // слушатели
 
-
-formEditElement.addEventListener('submit', handleEditFormSubmit);
+formNameElement.addEventListener('submit', handleNameFormSubmit);
 formAddElement.addEventListener('submit', handleAddFormSubmit);
-popupAddOpenBtn.addEventListener('click', () => {
-  formAddElement.reset();
-  disableBtn(submitPlace, { inactiveButtonClass: 'popup__btn_invalid' });
-  openPopup(popupAdd);
-
-});
-
