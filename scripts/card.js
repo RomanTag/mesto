@@ -31,7 +31,6 @@ class Card {
 
   _handleCardImageOpen = () => {
     this._handleCardImageClick(this._cardData)
-    console.log(this)
   }
 
   _setEventListener() {

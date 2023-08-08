@@ -11,7 +11,7 @@ import { FormValidator } from "./FormValidator.js"
 // profile
 
 const popupNameOpenBtn = document.querySelector('.profile__edit-btn');
-const nameInputprofile = document.querySelector('.profile__name');
+const nameInputProfile = document.querySelector('.profile__name');
 const jobInfoProfile = document.querySelector('.profile__data');
 
 //popup
@@ -99,7 +99,6 @@ formCardDataValidator.enableValidation()
 
 const openPopup = (popupElement) => {
   popupElement.classList.add('popup_opened');
-  document.addEventListener('click', handlePopupClose);
   document.addEventListener('keydown', handleEscClose);
 };
 
@@ -107,9 +106,11 @@ const openPopup = (popupElement) => {
 
 const closePopup = (popupElement) => {
   popupElement.classList.remove('popup_opened');
-  document.removeEventListener('click', handlePopupClose);
   document.removeEventListener('keydown', handleEscClose);
 };
+
+const popups = Array.from(document.querySelectorAll('.popup'))
+
 
 // закрываю попапы через оверлей и escape
 
@@ -124,15 +125,22 @@ const handlePopupClose = (evt) => {
 
 function handleEscClose(evt) {
   if (evt.key === 'Escape') {
-    popupList.forEach(closePopup);
+    const popupOpened = document.querySelector('.popup_opened');
+    if (popupOpened) {
+      closePopup(popupOpened)
+    }
   }
 };
+
+popups.forEach((popup) => {
+  popup.addEventListener('click', handlePopupClose)
+})
 
 // popup 1. сохраненяем инпуты
 
 const handleNameFormSubmit = (evt) => {
   evt.preventDefault();
-  nameInputprofile.textContent = nameInput.value;
+  nameInputProfile.textContent = nameInput.value;
   jobInfoProfile.textContent = jobInput.value;
   closePopup(popupName);
 };
@@ -142,7 +150,7 @@ const handleNameFormSubmit = (evt) => {
 popupNameOpenBtn.addEventListener('click', () => {
   formNameDataValidator.resetValidation();
   openPopup(popupName);
-  nameInput.value = nameInputprofile.textContent;
+  nameInput.value = nameInputProfile.textContent;
   jobInput.value = jobInfoProfile.textContent;
 });
 
