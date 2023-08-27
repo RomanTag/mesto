@@ -1,0 +1,15 @@
+{
+  "name": "yandex_praktikum",
+  "version": "0.0.1",
+  "description": "(index.js)",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "Roma Valeev",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.0"
+  },
+  "devDependencies": {}
+}
