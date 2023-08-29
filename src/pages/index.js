@@ -21,7 +21,8 @@ import {
   jobInfoProfile,
   popupPlaceSelector,
   popupAddSelector,
-  popupNameSelector
+  popupNameSelector,
+  validationConfig
 } from "../utils/constants.js";
 
 const userInfo = new UserInfo({
@@ -33,8 +34,7 @@ function createNewCard(cardData, selectorTemplate) {
   const card = new Card(cardData, selectorTemplate, () => {
     popupImage.open(cardData);
   });
-  const cardElement = card.generateCard();
-  return cardElement;
+  return card.generateCard();
 }
 
 const popupImage = new PopupWithImage(popupPlaceSelector);
@@ -57,22 +57,11 @@ const popupNewPlace = new PopupWithForm(popupAddSelector, (formValues) => {
 });
 popupNewPlace.setEventListeners();
 
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__btn',
-  inactiveButtonClass: 'popup__btn_invalid',
-  inputErrorClass: 'popup__input-container_invalid',
-  inputContainerSelector: '.popup__input-container',
-  errorClass: 'popup__error-message'
-};
-
 const popupNewPlaceValidator = new FormValidator(validationConfig, formCardDataElement);
 popupNewPlaceValidator.enableValidation();
 
 popupAddOpenBtn.addEventListener('click', () => {
   popupNewPlaceValidator.resetValidation();
-  popupNewPlaceValidator._toggleButton();
   popupNewPlace.open();
 });
 
@@ -82,28 +71,18 @@ formNameDataValidator.enableValidation();
 const formCardDataValidator = new FormValidator(validationConfig, formCardDataElement);
 formCardDataValidator.enableValidation();
 
-const popupAddForm = new PopupWithForm(popupNameSelector, (evt) => {
-  evt.preventDefault();
-  const formValues = popupAddForm.getFormValues();
+const popupEditProfile = new PopupWithForm(popupNameSelector, (formValues) => {
   userInfo.setUserInfo({ userName: formValues.name, userInfo: formValues.info });
-  popupAddForm.close();
+  popupEditProfile.close();
 });
-popupAddForm.setEventListeners();
 
-popupAddForm.setSubmitHandler((formValues) => {
-  userInfo.setUserInfo({ userName: formValues.name, userInfo: formValues.info });
-  const profileNameElement = document.querySelector('.profile__name');
-  const profileInfoElement = document.querySelector('.profile__data');
-  profileNameElement.textContent = formValues.name;
-  profileInfoElement.textContent = formValues.info;
-  popupAddForm.close();
-});
+popupEditProfile.setEventListeners();
 
 popupNameOpenBtn.addEventListener('click', () => {
   const userInfoData = userInfo.getUserInfo();
-  const profileForm = popupAddForm.getFormElement();
+  const profileForm = popupEditProfile.getFormElement();
   profileForm.elements.name.value = userInfoData.name;
   profileForm.elements.info.value = userInfoData.info;
   formNameDataValidator.resetValidation();
-  popupAddForm.open();
+  popupEditProfile.open();
 });

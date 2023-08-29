@@ -27,6 +27,17 @@ export const cards = [
   }
 ];
 
+// validationConfig
+
+export const validationConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__btn',
+  inactiveButtonClass: 'popup__btn_invalid',
+  inputErrorClass: 'popup__input-container_invalid',
+  inputContainerSelector: '.popup__input-container',
+  errorClass: 'popup__error-message'
+};
 
 // profile
 

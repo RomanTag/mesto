@@ -10,6 +10,7 @@ export default class FormValidator {
     this._form = form;
     this._button = form.querySelector(this._submitButtonSelector);
     this._inputList = form.querySelectorAll(this._inputSelector);
+    this._inputList = Array.from(form.querySelectorAll(this._inputSelector));
   }
 
   _showInputError(errorTextElement, input) {
@@ -66,7 +67,7 @@ export default class FormValidator {
   }
 
   _hasInvalidInput() {
-    return Array.from(this._inputList).some(item => !item.validity.valid);
+    return this._inputList.some(item => !item.validity.valid);
   }
 
   enableValidation() {

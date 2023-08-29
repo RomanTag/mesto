@@ -1,4 +1,7 @@
 .card__image {
+  display: block;
+  background-color: black;
+  color: white;
   object-fit: cover;
   overflow: hidden;
   width: 100%;
@@ -6,4 +9,5 @@
   height: 282px;
   border-top-left-radius: 3.5%;
   border-top-right-radius: 3.5%;
+  cursor: pointer;
 }
