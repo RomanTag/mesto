@@ -52,7 +52,7 @@ addNewCards.renderItems();
 const popupNewPlace = new PopupWithForm(popupAddSelector, (formValues) => {
   const item = { name: formValues.place, link: formValues.link };
   const cardElement = createNewCard(item, selectorTemplate);
-  addNewCards.addItem(cardElement); // Замените addNewItem на addItem
+  addNewCards.addItem(cardElement);
   popupNewPlace.close();
 });
 popupNewPlace.setEventListeners();
