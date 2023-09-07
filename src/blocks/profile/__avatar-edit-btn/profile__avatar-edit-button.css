@@ -1,0 +1,24 @@
+.profile__avatar-edit-btn {
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;  /* начальное значение */
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  background: transparent;
+  transition: opacity .2s linear;
+}
+
+.profile__avatar-edit-btn:hover {
+  background-image: url(../../../images/profile/pen.svg);
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .8);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 26px;
+  outline: 1px solid black;
+  cursor: pointer;
+}

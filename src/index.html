@@ -16,24 +16,21 @@
 <body class="body">
 
   <!-- page -->
-
   <div class="page">
 
     <!-- header -->
-
     <header class="header body__container">
       <img src="<%=require('./images/header/logo.svg')%>" alt="здесь должен быть логотип" class="header__logo">
     </header>
 
     <!-- content -->
-
     <main class="content">
 
       <!-- section profile  -->
-
       <section class="profile">
         <div class="profile__avatar">
-          <img src="<%=require('./images/profile/R&M.jpg')%>" alt="аватар" class="profile__avatar-image">
+          <button class="profile__avatar-edit-btn" type="button"></button><img src="" alt="аватар"
+            class="profile__avatar-image"></button>
         </div>
         <div class="profile__info">
           <div class="profile__info-conteiner">
@@ -46,21 +43,18 @@
       </section>
 
       <!-- section cards  -->
-
       <section class="cards" aria-label="label-description">
         <ul class="card"></ul>
       </section>
     </main>
 
     <!-- footer -->
-
     <footer class="footer">
       <p class="footer__author">&copy;2023. Mesto Russia</p>
     </footer>
   </div>
 
   <!-- popup 1 edit profile -->
-
   <div class="popup popup_type_edit">
     <div class="popup__container">
       <button class="popup__close-btn popup__edit-close-btn" type="button"></button>
@@ -82,16 +76,15 @@
   </div>
 
   <!-- popup 2 add place -->
-
   <div class="popup popup_type_add">
     <div class="popup__container">
       <button class="popup__close-btn popup__add-close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form action="#" id="popupAddForm" name="popupAddForm" class="popup__form" novalidate>
         <label class="popup__input-container">
-          <input type="text" class="popup__input" id="place" name="place" placeholder="Название" minlength="2"
+          <input type="text" class="popup__input" id="name" name="name" placeholder="Название" minlength="2"
             maxlength="30" required>
-          <span id="error-place" class="popup__error-message"></span>
+          <span id="error-name" class="popup__error-message"></span>
         </label>
         <label class="popup__input-container">
           <input type="url" class="popup__input" id="link" name="link" placeholder="Ссылка на картинку" required>
@@ -103,7 +96,6 @@
   </div>
 
   <!-- popup 3 open image -->
-
   <div class="popup popup_type_place">
     <div class="popup__place-container">
       <button class="popup__close-btn popup__place-close-btn" type="button"></button>
@@ -114,18 +106,45 @@
     </div>
   </div>
 
-  <!-- temlate -->
+  <!-- popup 4 update avatar -->
+  <div class="popup popup_type_avatar">
+    <div class="popup__container">
+      <button class="popup__close-btn popup__add-close-btn" type="button"></button>
+      <h3 class="popup__title">Обновить аватар</h3>
+      <form action="#" id="popupAvatarForm" name="popupAvatarForm" class="popup__form" novalidate>
+        <label class="popup__input-container">
+          <input type="url" class="popup__input" id="link" name="link" placeholder="ссылка на новый аватар" required>
+          <span id="error-link" class="popup__error-message"></span>
+        </label>
+        <button type="submit" id="submitAvatar" class="popup__btn">Сохранить</button>
+      </form>
+    </div>
+  </div>
 
+  <!-- popup 5 delete image -->
+  <div class="popup popup_type_delete">
+    <div class="popup__delete-container">
+      <button class="popup__close-btn popup__add-close-btn" type="button"></button>
+      <h3 class="popup__title">Вы уверены?</h3>
+      <button type="submit" id="submitDelete" class="popup__btn">Да</button>
+    </div>
+  </div>
+
+  <!-- temlate -->
   <template id="card-template">
     <li class="card__list">
       <button class="card__delete-btn" type="button"></button>
       <img class="card__image">
       <div class="card__container">
         <h2 class="card__title"></h2>
-        <button class="card__like-btn" type="button"></button>
+        <div class="card__like-сontainer">
+          <button class="card__like-btn" type="button"></button>
+          <span class="card__likes-counter"></span>
+        </div>
       </div>
     </li>
   </template>
+
 </body>
 
 </html>

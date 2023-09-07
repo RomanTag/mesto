@@ -1,7 +1,9 @@
 .profile__avatar-image {
-  box-sizing: border-box;
+  position: relative;
+  z-index: -1;
+  /* box-sizing: border-box; */
   border-radius: 50%;
-  object-fit: scale-down;
+  object-fit: cover;
   width: 120px;
   height: 120px;
 }
