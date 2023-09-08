@@ -33,7 +33,10 @@ export default class UserInfo {
   changeUserInfo({ userName, userInfo }) {
     this._nameElement.textContent = userName;
     this._infoElement.textContent = userInfo;
+    console.log(userName)
+    console.log(userInfo)
   }
+
 
   // получаю идентификатор пользователя
   getUserId() {

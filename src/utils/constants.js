@@ -10,19 +10,19 @@ export const validationConfig = {
 };
 
 // avatar
-export const avatarSelector = '.profile__avatar-image';
-export const popupAvatarSelector = '.popup_type_avatar';
+
 
 //popup
 export const popupList = Array.from(document.querySelectorAll('.popup'));
 
+
 // popup 1 (edit profile)
-export const popupNameSelector = '.popup_type_edit';
+export const popupNameSelector = '.popup_type_profile';
 export const profileSelector = '.profile'
 export const profileEditButtonSelector = '.profile__edit-btn';
 export const avatarEditButtonSelector = '.profile__avatar-edit-btn';
-export const nameInputProfile = '.profile__name';
-export const jobInfoProfile = '.profile__data';
+// export const nameInputProfile = '.profile__name';
+// export const jobInfoProfile = '.profile__data';
 
 //popup 2 (add elements)
 export const popupAddSelector = '.popup_type_add';
@@ -38,3 +38,20 @@ export const popupDeleteSelector = '.popup_type_delete';
 // card
 export const selectorTemplate = '#card-template';
 export const cardListSelector = '.card';
+
+
+// селекторы
+
+// profile
+
+export const formNameDataElement = document.forms.popupProfileForm; // Обновленный селектор для формы профиля
+export const nameInputProfile = '#nameProfile'; // Обновленный селектор для инпута имени
+export const jobInfoProfile = '#infoProfile';
+export const profileNameSelector = '.profile__name';
+export const profileInfoSelector = '.profile__data';
+
+export const linkAvatar = '#linkAvatar';
+export const avatarSelector = '.profile__avatar-image';
+export const popupAvatarSelector = '.popup_type_avatar';
+
+

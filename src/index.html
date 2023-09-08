@@ -29,15 +29,15 @@
       <!-- section profile  -->
       <section class="profile">
         <div class="profile__avatar">
-          <button class="profile__avatar-edit-btn" type="button"></button><img src="" alt="аватар"
-            class="profile__avatar-image"></button>
+          <button class="profile__avatar-edit-btn" type="button"></button><img src="#" alt="аватар"
+            class="profile__avatar-image">
         </div>
         <div class="profile__info">
           <div class="profile__info-conteiner">
-            <h1 class="profile__name">Рик и Морти</h1>
+            <h1 class="profile__name"></h1>
             <button class="profile__edit-btn" type="button"></button>
           </div>
-          <p class="profile__data">Исследователи галактик</p>
+          <p class="profile__data"></p>
         </div>
         <button class="profile__add-btn" type="button"></button>
       </section>
@@ -55,40 +55,40 @@
   </div>
 
   <!-- popup 1 edit profile -->
-  <div class="popup popup_type_edit">
+  <div class="popup popup_type_profile">
     <div class="popup__container">
-      <button class="popup__close-btn popup__edit-close-btn" type="button"></button>
+      <button class="popup__close-btn popup__profile-close-btn" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form action="#" id="popupEditForm" name="popupEditForm" class="popup__form" novalidate>
+      <form action="#" id="popupProfileForm" name="popupProfileForm" class="popup__form" novalidate>
         <label class="popup__input-container">
-          <input type="text" class="popup__input" id="name" name="name" placeholder="Введите имя" minlength="2"
+          <input type="text" class="popup__input" id="nameProfile" name="name" placeholder="Введите имя" minlength="2"
             maxlength="40" required>
-          <span id="error-name" class="popup__error-message"></span>
+          <span id="error-nameProfile" class="popup__error-message"></span>
         </label>
         <label class="popup__input-container">
-          <input type="text" class="popup__input" id="info" name="info" placeholder="Введите описание" minlength="2"
+          <input type="text" class="popup__input" id="infoProfile" name="info" placeholder="Введите описание" minlength="2"
             maxlength="200" required>
-          <span id="error-info" class="popup__error-message"></span>
+          <span id="error-infoProfile" class="popup__error-message"></span>
         </label>
         <button type="submit" id="submitProfile" class="popup__btn">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <!-- popup 2 add place -->
+  <!-- popup 2 add card -->
   <div class="popup popup_type_add">
     <div class="popup__container">
       <button class="popup__close-btn popup__add-close-btn" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
       <form action="#" id="popupAddForm" name="popupAddForm" class="popup__form" novalidate>
         <label class="popup__input-container">
-          <input type="text" class="popup__input" id="name" name="name" placeholder="Название" minlength="2"
+          <input type="text" class="popup__input" id="nameCard" name="name" placeholder="Название" minlength="2"
             maxlength="30" required>
-          <span id="error-name" class="popup__error-message"></span>
+          <span id="error-nameCard" class="popup__error-message"></span>
         </label>
         <label class="popup__input-container">
-          <input type="url" class="popup__input" id="link" name="link" placeholder="Ссылка на картинку" required>
-          <span id="error-link" class="popup__error-message"></span>
+          <input type="url" class="popup__input" id="linkCard" name="link" placeholder="Ссылка на картинку" required>
+          <span id="error-linkCard" class="popup__error-message"></span>
         </label>
         <button type="submit" id="submitPlace" class="popup__btn">Создать</button>
       </form>
@@ -113,8 +113,8 @@
       <h3 class="popup__title">Обновить аватар</h3>
       <form action="#" id="popupAvatarForm" name="popupAvatarForm" class="popup__form" novalidate>
         <label class="popup__input-container">
-          <input type="url" class="popup__input" id="link" name="link" placeholder="ссылка на новый аватар" required>
-          <span id="error-link" class="popup__error-message"></span>
+          <input type="url" class="popup__input" id="linkAvatar" name="linkAvatar" placeholder="ссылка на новый аватар" required>
+          <span id="error-linkAvatar" class="popup__error-message"></span>
         </label>
         <button type="submit" id="submitAvatar" class="popup__btn">Сохранить</button>
       </form>

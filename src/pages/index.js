@@ -14,8 +14,6 @@ import {
   cardListSelector,
   selectorTemplate,
   formCardDataElement,
-  nameInputProfile,
-  jobInfoProfile,
   popupPlaceSelector,
   popupAddSelector,
   popupNameSelector,
@@ -26,7 +24,9 @@ import {
   profileSelector,
   profileEditButtonSelector,
   avatarEditButtonSelector,
-  cardAddButtonSelector
+  cardAddButtonSelector,
+  profileNameSelector,
+  profileInfoSelector,
 } from "../utils/constants.js";
 
 // constants
@@ -100,15 +100,17 @@ const renderCards = new Section(
 
 // Создаю экземпляр класса UserInfo для управления данными пользователя
 const userInfo = new UserInfo({
-  nameSelector: nameInputProfile,
-  infoSelector: jobInfoProfile,
+  nameSelector: profileNameSelector,
+  infoSelector: profileInfoSelector,
   avatarSelector: avatarSelector
 });
+
+// const userInfo = new UserInfo({profileNameSelector, profileAboutSelector, profileAvatarSelector});
 
 // Создаю экземпляр класса PopupWithForm для редактирования аватара
 const popupUpdateAvatar = new PopupWithForm(popupAvatarSelector, (formData) => {
   popupUpdateAvatar.renderLoading(true);
-  api.updateAvatar({ avatar: formData.link }).then((data) => {
+  api.updateAvatar({ avatar: formData.linkAvatar }).then((data) => {
     userInfo.setUserAvatar({ newUserAvatar: data.avatar });
     popupUpdateAvatar.close();
   }).catch((err) => {
@@ -135,6 +137,7 @@ const popupWithProfileForm = new PopupWithForm(popupNameSelector, (formData) => 
   popupWithProfileForm.renderLoading(true);
   api.editProfileInfo({ name: formData.name, about: formData.info }).then((data) => {
     userInfo.changeUserInfo({ userName: data.name, userInfo: data.about });
+    console.log(data.about)
     popupWithProfileForm.close();
   }).catch((err) => {
     console.error(err);
@@ -158,22 +161,20 @@ profileEditButtonElement.addEventListener('click', () => {
 });
 
 // Создаю экземпляр класса PopupWithForm для добавления карточек
+
 const popupWithCardForm = new PopupWithForm(popupAddSelector, (formData) => {
-  if (typeof formData.name === 'string' && typeof formData.link === 'string' && formData.name.trim() !== '' && formData.link.trim() !== '') {
-    popupWithCardForm.renderLoading(true);
-    api.addNewCards(formData).then((newCardData) => {
-      console.log("Успешно создана новая карточка:", newCardData);
-      renderCards.addItem(newCardData);
-      popupWithCardForm.close();
-    }).catch((err) => {
-      console.error("Ошибка при создании карточки:", err);
-    }).finally(() => {
-      popupWithCardForm.renderLoading(false);
-    });
-  } else {
-    console.error('Данные имеют неправильный формат');
-  }
+  popupWithCardForm.renderLoading(true);
+  api.addNewCards(formData).then((newCardData) => {
+    console.log("Успешно создана новая карточка:", newCardData);
+    renderCards.addItem(newCardData);
+    popupWithCardForm.close();
+  }).catch((err) => {
+    console.error("Ошибка при создании карточки:", err);
+  }).finally(() => {
+    popupWithCardForm.renderLoading(false);
+  });
 });
+
 
 popupWithCardForm.setEventListeners();
 

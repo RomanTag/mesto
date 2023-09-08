@@ -1,4 +1,4 @@
-.popup__edit-close-btn {
+.popup__profile-close-btn {
   left: 262px;
   top: -37px;
 
@@ -6,13 +6,13 @@
 
 
 @media screen and (min-width: 768px) {
-  .popup__edit-close-btn {
+  .popup__profile-close-btn {
     left: 313px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .popup__edit-close-btn {
+  .popup__profile-close-btn {
     left: 438px;
     top: -40px;
   }
