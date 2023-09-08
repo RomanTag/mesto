@@ -9,8 +9,6 @@ export const validationConfig = {
   errorClass: 'popup__error-message'
 };
 
-
-
 // popup 1 (edit profile)
 export const formNameDataElement = document.forms.popupProfileForm;
 export const nameInputProfile = '#nameProfile';
@@ -37,7 +35,6 @@ export const linkAvatar = '#linkAvatar';
 export const avatarSelector = '.profile__avatar-image';
 export const popupAvatarSelector = '.popup_type_avatar';
 export const avatarEditButtonSelector = '.profile__avatar-edit-btn';
-
 
 // card
 export const selectorTemplate = '#card-template';
