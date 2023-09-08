@@ -161,7 +161,6 @@ profileEditButtonElement.addEventListener('click', () => {
 });
 
 // Создаю экземпляр класса PopupWithForm для добавления карточек
-
 const popupWithCardForm = new PopupWithForm(popupAddSelector, (formData) => {
   popupWithCardForm.renderLoading(true);
   api.addNewCards(formData).then((newCardData) => {
@@ -174,7 +173,6 @@ const popupWithCardForm = new PopupWithForm(popupAddSelector, (formData) => {
     popupWithCardForm.renderLoading(false);
   });
 });
-
 
 popupWithCardForm.setEventListeners();
 
