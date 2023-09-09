@@ -9,7 +9,7 @@ export default class PopupWithConfirmation extends Popup {
   // установливаю обработчик события подтверждения
   updateSubmitHandler(action) {
 
-    // Принимаю функцию-обработчик и сохраняю её в поле класса `_handleSubmit`
+    // принимаю функцию-обработчик и сохраняю её в поле класса `_handleSubmit`
     this._handleSubmit = action;
   }
 
@@ -19,7 +19,6 @@ export default class PopupWithConfirmation extends Popup {
     const submitDeleteButton = this._popup.querySelector('#submitDelete');
     submitDeleteButton.addEventListener('click', () => {
       this._handleSubmit();
-      this.close();
     });
   }
 }

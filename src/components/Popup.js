@@ -11,7 +11,7 @@ export default class Popup {
       this.close();
     });
 
-    // Добавляю слушатель события для клика на оверлее
+    // добавляю слушатель события для клика на оверлее
     this._popup.addEventListener('click', (evt) => {
       if (evt.target === this._popup) {
         this.close();

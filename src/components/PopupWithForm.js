@@ -7,16 +7,18 @@ export default class PopupWithForm extends Popup {
     this._inputList = this._form.querySelectorAll('.popup__input');
     this._submitButtonElement = this._popup.querySelector('.popup__btn');
     this._handlerSubmitForm = handlerSubmitForm;
+
+    this._originalSubmitButtonText = this._submitButtonElement.textContent;
   }
 
-  // Переопределяю метод родительского класса `setEventListeners()`
-  // Устанавливаю слушатели событий для кнопки закрытия и формы
+  // переопределяю метод родительского класса `setEventListeners()`
+  // устанавливаю слушатели событий для кнопки закрытия и формы
   setEventListeners() {
     super.setEventListeners();
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
 
-      // При сабмите формы вызываю обработчик, передавая ему значения полей формы
+      // при сабмите формы вызываю обработчик, передавая ему значения полей формы
       this._handlerSubmitForm(this._getInputValues());
     });
   }
@@ -33,7 +35,7 @@ export default class PopupWithForm extends Popup {
     if (isLoading === true) {
       this._submitButtonElement.textContent = 'Сохранение...';
     } else {
-      this._submitButtonElement.textContent = 'Сохранить';
+      this._submitButtonElement.textContent = this._originalSubmitButtonText;
     }
   }
 
@@ -46,8 +48,8 @@ export default class PopupWithForm extends Popup {
     return this._formValues;
   }
 
-  // Переопределяю метод родительского класса `close()`
-  // Закрываю всплывающее окно и сбрасываю значения полей формы
+  // переопределяю метод родительского класса `close()`
+  // закрываю всплывающее окно и сбрасываю значения полей формы
   close() {
     super.close();
     this._form.reset();

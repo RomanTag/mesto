@@ -14,7 +14,7 @@ export default class Api {
     return Promise.reject(`Ошибка: ${res.status}`);
   }
 
-  // Получаю информацию о текущем пользователе
+  // получаю информацию о текущем пользователе
   getUserInfo() {
     return fetch(`${this._baseURL}/users/me`, {
       headers: this._headers
@@ -22,38 +22,29 @@ export default class Api {
       .then(this._checkResponse);
   }
 
-  // Получаю начальные карточки
+  // получаю начальные карточки
   getInitialCards() {
     return fetch(`${this._baseURL}/cards`, {
       headers: this._headers
     }).then(this._checkResponse);
   }
 
-  // Получаю информацию о пользователе и начальные карточки
+  // получаю информацию о пользователе и начальные карточки
   getDataFromServer() {
     return Promise.all([this.getInitialCards(), this.getUserInfo()]);
   }
 
-  // Обновляю информацию о пользователе
+  // обновляю информацию о пользователе
   editProfileInfo(body) {
     return fetch(`${this._baseURL}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify(body),
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .then(response => {
-        console.log("Обновленные данные пользователя:", response);
-        return response;
-      });
+      .then(this._checkResponse);
   }
 
-  // Добавляю новую карточку
+  // добавляю новую карточку
   addNewCards(body) {
     console.log("Отправка запроса на создание новой карточки с данными:", JSON.stringify(body));
 
@@ -63,17 +54,9 @@ export default class Api {
       body: JSON.stringify(body),
     })
       .then(this._checkResponse)
-      .then(response => {
-        console.log("Ответ от сервера:", response);
-        return response;
-      })
-      .catch(error => {
-        console.error("Ошибка:", error);
-        throw error;
-      });
   }
 
-  // Обновляю аватар пользователя
+  // обновляю аватар пользователя
   updateAvatar(newAvatar) {
     console.log("Тело запроса для обновления аватара:", JSON.stringify(newAvatar));
     return fetch(`${this._baseURL}/users/me/avatar`, {
@@ -84,7 +67,7 @@ export default class Api {
       .then(this._checkResponse);
   }
 
-  // Удаляю карточку
+  // удаляю карточку
   deleteCard(cardId) {
     return fetch(`${this._baseURL}/cards/${cardId}`, {
       method: 'DELETE',
@@ -93,7 +76,7 @@ export default class Api {
       .then(this._checkResponse);
   }
 
-  // Добавляю лайк карточке
+  // добавляю лайк карточке
   addCardLike(cardId) {
     return fetch(`${this._baseURL}/cards/${cardId}/likes`, {
       method: 'PUT',
@@ -102,7 +85,7 @@ export default class Api {
       .then(this._checkResponse);
   }
 
-  // Удаляю лайк с карточки
+  // удаляю лайк с карточки
   deleteCardLike(cardId) {
     return fetch(`${this._baseURL}/cards/${cardId}/likes`, {
       method: 'DELETE',
@@ -110,7 +93,7 @@ export default class Api {
     }).then(this._checkResponse);
   }
 
-  // Удаляю карточку
+  // удаляю карточку
   removeCard(cardId) {
     return fetch(`${this._baseURL}/cards/${cardId}`, {
       method: 'DELETE',

@@ -10,6 +10,7 @@
   "author": "ROMAN VALEEV",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.17",
     "@babel/preset-env": "^7.22.10",
     "autoprefixer": "^10.4.15",
     "babel": "^6.23.0",
@@ -22,11 +23,10 @@
     "mini-css-extract-plugin": "^2.7.6",
     "postcss-loader": "^7.3.3",
     "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "D": "^1.0.0",
-    "webpack-dev-server": "^4.15.1"
+    "core-js": "^3.32.2"
   }
 }

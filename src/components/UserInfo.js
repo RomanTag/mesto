@@ -13,15 +13,13 @@ export default class UserInfo {
     };
   }
 
-  // установливаю информацию о пользователе
-  setUserInfo(userData) {
-    const { userName, userInfo, userAvatar, userId } = userData;
+  // обновляю информацию о пользователе в интерфейсе
+  setUserInfo({ userName, userInfo, userAvatar, userId }) {
 
-    // Устанавливаю имя, информацию и аватар пользователя
-    this._nameElement.textContent = userName;
-    this._infoElement.textContent = userInfo;
-    this._avatarElement.src = userAvatar;
-    this._userId = userId;
+    if (userName) this._nameElement.textContent = userName;
+    if (userInfo) this._infoElement.textContent = userInfo;
+    if (userAvatar) this._avatarElement.src = userAvatar;
+    if (userId) this._userId = userId;
   }
 
   // установливаю новый аватар пользователя
@@ -29,17 +27,11 @@ export default class UserInfo {
     this._avatarElement.src = newUserAvatar;
   }
 
-  // измененяю имя и информацию о пользователе
-  changeUserInfo({ userName, userInfo }) {
-    this._nameElement.textContent = userName;
-    this._infoElement.textContent = userInfo;
-    console.log(userName)
-    console.log(userInfo)
-  }
-
-
   // получаю идентификатор пользователя
   getUserId() {
+    if (!this._userId) {
+      return null;  // или return "";
+    }
     return this._userId;
   }
 }
