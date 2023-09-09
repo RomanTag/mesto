@@ -30,7 +30,7 @@ export default class UserInfo {
   // получаю идентификатор пользователя
   getUserId() {
     if (!this._userId) {
-      return null;  // или return "";
+      return null;
     }
     return this._userId;
   }

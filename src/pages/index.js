@@ -57,7 +57,7 @@ api.getDataFromServer().then((responses) => {
 });
 
 
-/* card */
+// add card
 
 
 // обрабатываю клик по карточке
@@ -131,10 +131,10 @@ const renderCards = new Section(
 );
 
 
-/* popups */
+// popups
 
 
-/* avatar */
+// avatar
 
 
 // создаю экземпляр класса PopupWithForm для редактирования аватара
@@ -163,7 +163,7 @@ avatarEditButtonElement.addEventListener('click', () => {
 });
 
 
-/* profile */
+// profile
 
 
 // создаю экземпляр класса PopupWithForm для редактирования профиля
@@ -194,7 +194,7 @@ profileEditButtonElement.addEventListener('click', () => {
 });
 
 
-/* cards */
+// cards
 
 
 // создаю экземпляр класса PopupWithForm для добавления карточек
@@ -224,7 +224,7 @@ cardAddButtonElement.addEventListener('click', () => {
 });
 
 
-/* delete */
+// delete
 
 
 // создаю экземпляр класса PopupWithConfirmation для подтверждения удаления карточки
@@ -242,7 +242,7 @@ deleteConfirmationPopup.updateSubmitHandler(() => {
 deleteConfirmationPopup.setEventListeners();
 
 
-/* fullscreen cards */
+// fullscreen cards
 
 
 // создаю экземпляр класса PopupWithImage для отображения увеличенных изображений карточек
